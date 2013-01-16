@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ABSingletonProtocol.h"
 
-@interface ABMultiton : NSObject
+@interface ABMultiton : NSObject <ABSingletonProtocol>
+{
+    NSMutableDictionary *singletones;
+}
+
+// actions
++ (id)sharedInstanceOfClass:(Class)theClass;
 
 @end
