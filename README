@@ -8,8 +8,8 @@ It is not implementation of classical multiton. This implementation uses instanc
 
 Add multiton to project as submodule
 
-	`cd <project source directory>`
-	`git submodule add https://github.com/belkevich/multiton.git <submodules directory>`
+`cd <project source directory>`
+`git submodule add https://github.com/belkevich/multiton.git <submodules directory>`
 
 # Adding class instance to multiton
 
