@@ -1,6 +1,6 @@
 //
 //  ABMultiton.m
-//  RequestManagerApp
+//  ABMultiton
 //
 //  Created by Alexey Belkevich on 1/13/13.
 //  Copyright (c) 2013 okolodev. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "ABMultiton.h"
 
-#define ABMULTITON_EXCEPTION_PROTOCOL       @"class is not conforms to protocol ABSingletonProtocol"
+#define AB_MULTITON_EXCEPTION_PROTOCOL      @"class is not conforms to protocol ABSingletonProtocol"
 
 @interface ABMultiton ()
 - (id)sharedInstanceOfClass:(Class)theClass;
@@ -16,7 +16,7 @@
 
 @implementation ABMultiton
 
-static ABMultiton *instance = Nil;
+static ABMultiton *instance = nil;
 
 #pragma mark -
 #pragma mark main routine
@@ -43,7 +43,7 @@ static ABMultiton *instance = Nil;
 
 - (oneway void)release
 {
-    
+    // nothing to do
 }
 
 - (id)autorelease
@@ -87,8 +87,8 @@ static ABMultiton *instance = Nil;
         return classInstance;
     }
     NSString *reason = [NSString stringWithFormat:@"'%@' %@", className,
-                        ABMULTITON_EXCEPTION_PROTOCOL];
-    @throw [NSException exceptionWithName:ABMULTITON_EXCEPTION_PROTOCOL reason:reason
+                        AB_MULTITON_EXCEPTION_PROTOCOL];
+    @throw [NSException exceptionWithName:AB_MULTITON_EXCEPTION_PROTOCOL reason:reason
                                  userInfo:nil];
 }
 
