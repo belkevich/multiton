@@ -18,15 +18,15 @@ git submodule add https://github.com/belkevich/multiton.git <submodules director
 ###### Prepare class
 
 1. Class should conforms to `ABSingletonProtocol`
-
 ```objective-c
+#import "ABSingletonProtocol.h"
+...
 @interface MyClass : ParentClass <ABSingletonProtocol>
 ...
 @end
 ```
 
 2. Class should implement in `sharedInstance` method:
-
 ```objective-c
 #import "ABMultiton.h"
 ...
@@ -41,7 +41,6 @@ git submodule add https://github.com/belkevich/multiton.git <submodules director
 3. Class should use default `init` method for initialization
 
 ###### Using
-
 ```
 MyClass *instance = [MyClass sharedInstance];
 ```
