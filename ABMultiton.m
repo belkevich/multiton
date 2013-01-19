@@ -7,10 +7,11 @@
 //
 
 #import "ABMultiton.h"
+#import "ABSingletonProtocol.h"
 
 #define AB_MULTITON_EXCEPTION_PROTOCOL      @"class is not conforms to protocol ABSingletonProtocol"
 
-@interface ABMultiton ()
+@interface ABMultiton () <ABSingletonProtocol>
 - (id)sharedInstanceOfClass:(Class)theClass;
 @end
 
@@ -52,9 +53,9 @@ static ABMultiton *instance = nil;
 }
 
 #pragma mark -
-#pragma mark ABSingleton protocol implementation
+#pragma mark singleton protocol implementation
 
-+ (id)sharedInstance
++ (instancetype)sharedInstance
 {
     if (!instance)
     {
@@ -83,6 +84,8 @@ static ABMultiton *instance = nil;
         if (!classInstance)
         {
             classInstance = [[theClass alloc] init];
+            [singletones setObject:classInstance forKey:className];
+            [classInstance release];
         }
         return classInstance;
     }

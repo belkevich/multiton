@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ABSingletonProtocol.h"
 
-@interface ABMultiton : NSObject <ABSingletonProtocol>
+@interface ABMultiton : NSObject
 {
     NSMutableDictionary *singletones;
 }

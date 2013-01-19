@@ -10,6 +10,6 @@
 
 @protocol ABSingletonProtocol <NSObject>
 
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 
 @end
