@@ -17,8 +17,6 @@
 
 @implementation ABMultiton
 
-static ABMultiton *instance = nil;
-
 #pragma mark -
 #pragma mark main routine
 
@@ -57,10 +55,11 @@ static ABMultiton *instance = nil;
 
 + (instancetype)sharedInstance
 {
-    if (!instance)
-    {
+    static ABMultiton *instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         instance = [[ABMultiton alloc] init];
-    }
+    });
     return instance;
 }
 
