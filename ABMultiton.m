@@ -7,11 +7,11 @@
 //
 
 #import "ABMultiton.h"
-#import "ABSingletonProtocol.h"
+#import "ABMultitonProtocol.h"
 
-#define AB_MULTITON_EXCEPTION_PROTOCOL      @"class is not conforms to protocol ABSingletonProtocol"
+#define AB_MULTITON_EXCEPTION_PROTOCOL      @"class is not conforms to protocol ABMultitonProtocol"
 
-@interface ABMultiton () <ABSingletonProtocol>
+@interface ABMultiton () <ABMultitonProtocol>
 - (id)sharedInstanceOfClass:(Class)theClass;
 @end
 
@@ -78,7 +78,7 @@
 - (id)sharedInstanceOfClass:(Class)theClass
 {
     NSString *className = NSStringFromClass(theClass);
-    if ([theClass conformsToProtocol:@protocol(ABSingletonProtocol)])
+    if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
     {
         __block id classInstance = nil;
         dispatch_sync(lockQueue, ^{
