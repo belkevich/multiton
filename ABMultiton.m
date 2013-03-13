@@ -26,6 +26,7 @@
     if (self)
     {
         singletones = [[NSMutableDictionary alloc] init];
+        lockQueue = dispatch_queue_create("multiton queue", NULL);
     }
     return self;
 }
@@ -79,11 +80,16 @@
     NSString *className = NSStringFromClass(theClass);
     if ([theClass conformsToProtocol:@protocol(ABSingletonProtocol)])
     {
-        id classInstance = [singletones objectForKey:className];
+        __block id classInstance = nil;
+        dispatch_sync(lockQueue, ^{
+            classInstance = [singletones objectForKey:className];
+        });
         if (!classInstance)
         {
             classInstance = [[theClass alloc] init];
-            [singletones setObject:classInstance forKey:className];
+            dispatch_async(lockQueue, ^{
+                [singletones setObject:classInstance forKey:className];
+            });
             [classInstance release];
         }
         return classInstance;

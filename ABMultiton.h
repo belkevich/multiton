@@ -11,6 +11,7 @@
 @interface ABMultiton : NSObject
 {
     NSMutableDictionary *singletones;
+    dispatch_queue_t lockQueue;
 }
 
 // actions
