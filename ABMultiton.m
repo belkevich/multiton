@@ -12,7 +12,9 @@
 #define AB_MULTITON_EXCEPTION_PROTOCOL      @"class is not conforms to protocol ABMultitonProtocol"
 
 @interface ABMultiton () <ABMultitonProtocol>
+
 - (id)sharedInstanceOfClass:(Class)theClass;
+- (void)removeInstanceOfClass:(Class)theClass;
 @end
 
 @implementation ABMultiton
@@ -25,8 +27,8 @@
     self = [super init];
     if (self)
     {
-        singletones = [[NSMutableDictionary alloc] init];
-        lockQueue = dispatch_queue_create("multiton queue", NULL);
+        instances = [[NSMutableDictionary alloc] init];
+        lock = dispatch_queue_create("multiton queue", NULL);
     }
     return self;
 }
@@ -58,7 +60,8 @@
 {
     static ABMultiton *instance;
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    dispatch_once(&onceToken, ^
+    {
         instance = [[ABMultiton alloc] init];
     });
     return instance;
@@ -72,6 +75,20 @@
     return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass];
 }
 
++ (void)removeInstanceOfClass:(Class)theClass
+{
+    [[ABMultiton sharedInstance] removeInstanceOfClass:theClass];
+}
+
+- (void)removeInstanceOfClass:(Class)theClass
+{
+    NSString *className = NSStringFromClass(theClass);
+    dispatch_async(lock, ^
+    {
+        [instances removeObjectForKey:className];
+    });
+}
+
 #pragma mark -
 #pragma mark private
 
@@ -81,21 +98,23 @@
     if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
     {
         __block id classInstance = nil;
-        dispatch_sync(lockQueue, ^{
-            classInstance = [singletones objectForKey:className];
+        dispatch_sync(lock, ^
+        {
+            classInstance = [instances objectForKey:className];
         });
         if (!classInstance)
         {
             classInstance = [[theClass alloc] init];
-            dispatch_async(lockQueue, ^{
-                [singletones setObject:classInstance forKey:className];
+            dispatch_async(lock, ^
+            {
+                [instances setObject:classInstance forKey:className];
             });
             [classInstance release];
         }
         return classInstance;
     }
     NSString *reason = [NSString stringWithFormat:@"'%@' %@", className,
-                        AB_MULTITON_EXCEPTION_PROTOCOL];
+                                                  AB_MULTITON_EXCEPTION_PROTOCOL];
     @throw [NSException exceptionWithName:AB_MULTITON_EXCEPTION_PROTOCOL reason:reason
                                  userInfo:nil];
 }

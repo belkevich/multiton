@@ -10,11 +10,12 @@
 
 @interface ABMultiton : NSObject
 {
-    NSMutableDictionary *singletones;
-    dispatch_queue_t lockQueue;
+    NSMutableDictionary *instances;
+    dispatch_queue_t lock;
 }
 
 // actions
 + (id)sharedInstanceOfClass:(Class)theClass;
++ (void)removeInstanceOfClass:(Class)theClass;
 
 @end
