@@ -10,6 +10,10 @@
 
 @protocol ABMultitonProtocol <NSObject>
 
+@required
 + (instancetype)sharedInstance;
+
+@optional
+- (BOOL)isRemoveOnMemoryWarning;
 
 @end

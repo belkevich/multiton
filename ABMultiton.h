@@ -15,7 +15,7 @@
 }
 
 // actions
-+ (id)sharedInstanceOfClass:(Class)theClass;
++ (instancetype)sharedInstanceOfClass:(Class)theClass;
 + (void)removeInstanceOfClass:(Class)theClass;
 
 @end

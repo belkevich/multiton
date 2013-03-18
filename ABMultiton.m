@@ -13,8 +13,9 @@
 
 @interface ABMultiton () <ABMultitonProtocol>
 
-- (id)sharedInstanceOfClass:(Class)theClass;
+- (instancetype)sharedInstanceOfClass:(Class)theClass;
 - (void)removeInstanceOfClass:(Class)theClass;
+- (void)memoryWarningReceived:(NSNotification *)notification;
 @end
 
 @implementation ABMultiton
@@ -29,8 +30,19 @@
     {
         instances = [[NSMutableDictionary alloc] init];
         lock = dispatch_queue_create("multiton queue", NULL);
+        [[NSNotificationCenter defaultCenter]
+                               addObserver:self selector:@selector(memoryWarningReceived:)
+                                      name:UIApplicationDidReceiveMemoryWarningNotification
+                                    object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [instances release];
+    [super dealloc];
 }
 
 - (id)retain
@@ -70,7 +82,7 @@
 #pragma mark -
 #pragma mark actions
 
-+ (id)sharedInstanceOfClass:(Class)theClass
++ (instancetype)sharedInstanceOfClass:(Class)theClass
 {
     return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass];
 }
@@ -79,6 +91,23 @@
 {
     [[ABMultiton sharedInstance] removeInstanceOfClass:theClass];
 }
+
+- (void)memoryWarningReceived:(NSNotification *)notification
+{
+    dispatch_async(lock, ^
+    {
+        NSSet *keys = [instances keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop)
+        {
+            if ([obj respondsToSelector:@selector(isRemoveOnMemoryWarning)])
+            {
+                return [obj isRemoveOnMemoryWarning];
+            }
+            return NO;
+        }];
+        [instances removeObjectsForKeys:[keys allObjects]];
+    });
+}
+
 
 - (void)removeInstanceOfClass:(Class)theClass
 {
@@ -92,7 +121,7 @@
 #pragma mark -
 #pragma mark private
 
-- (id)sharedInstanceOfClass:(Class)theClass
+- (instancetype)sharedInstanceOfClass:(Class)theClass
 {
     NSString *className = NSStringFromClass(theClass);
     if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
