@@ -2,7 +2,7 @@
 ========
 ---
 # About
-It is not implementation of classical multiton. This implementation uses instance `class name` as `key` to access instance.
+It is not implementation of classic multiton. This implementation uses instance `class name` as `key` to access instance.
 
 # Installation
 
@@ -13,20 +13,20 @@ cd <project source directory>
 git submodule add https://github.com/belkevich/multiton.git <submodules directory>
 ```
 
-# Adding class instance to multiton
+# Using
 
-###### Prepare class
+## Prepare class
 
-1. Class should conforms to `ABSingletonProtocol`
+1. Class should conforms to `ABMultitonProtocol`
 ```objective-c
-#import "ABSingletonProtocol.h"
+#import "ABMultitonProtocol.h"
 ...
-@interface MyClass : ParentClass <ABSingletonProtocol>
+@interface MyClass : ParentClass <ABMultitonProtocol>
 ...
 @end
 ```
 
-2. Class should implement in `sharedInstance` method:
+2. Class should implement `sharedInstance` method in this way:
 ```objective-c
 #import "ABMultiton.h"
 ...
@@ -34,17 +34,50 @@ git submodule add https://github.com/belkevich/multiton.git <submodules director
 ...
 + (id)sharedIsntance
 {
-	return [ABMultiton sharedInstanceOfClass:[self class]];
+    return [ABMultiton sharedInstanceOfClass:[self class]];
 }
 ```
 
-3. Class should use default `init` method for initialization
+3. Class should use `init` method for initialization. No Arguments!
 
-###### Using
-```
+## Get shared instance
+
+```objective-c
 MyClass *instance = [MyClass sharedInstance];
 ```
 
+## Removing class instance from multiton
+
+If you don't need shared instance anymore you can remove it by this call:
+```objective-c
+[ABMultiton removeInstanceOfClass:yourClass];
+```
+
+## Advanced instance management
+
+Sometimes you don't need shared instance for all app life cycle.
+And you may want to release some shared instances on low memory.
+It's pretty easy. Just implement optional method `isRemovableInstance`
+of `ABMultitonProtocol`
+```objective-c
+@implementation MyClass
+...
+- (BOOL)isRemovableInstance
+{
+    return YES;
+}
+```
+And this instance will be released on memory warning.
+Or you can release all such instances
+```objective-c
+[ABMultiton purgeRemovableInstances];
+```
+
+## Thread safety
+
+Using `ABMultiton` is thread safe.
+
 # Important warning
 
-Using ABMultiton is not thread-safe! Thread-safe using will be added in future
+Please, don't create shared instance for class if you can.
+"Singleton mania" is a well known anti-pattern.
