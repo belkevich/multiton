@@ -16,6 +16,7 @@
 - (instancetype)sharedInstanceOfClass:(Class)theClass;
 - (void)removeInstanceOfClass:(Class)theClass;
 - (void)memoryWarningReceived:(NSNotification *)notification;
+- (void)purgeRemovableInstances;
 @end
 
 @implementation ABMultiton
@@ -92,20 +93,31 @@
     [[ABMultiton sharedInstance] removeInstanceOfClass:theClass];
 }
 
-- (void)memoryWarningReceived:(NSNotification *)notification
++ (void)purgeRemovableInstances
+{
+    [[ABMultiton sharedInstance] purgeRemovableInstances];
+}
+
+- (void)purgeRemovableInstances
 {
     dispatch_async(lock, ^
     {
         NSSet *keys = [instances keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop)
         {
-            if ([obj respondsToSelector:@selector(isRemoveOnMemoryWarning)])
+            if ([obj respondsToSelector:@selector(isRemovableInstance)])
             {
-                return [obj isRemoveOnMemoryWarning];
+                return [obj isRemovableInstance];
             }
             return NO;
         }];
         [instances removeObjectsForKeys:[keys allObjects]];
     });
+}
+
+
+- (void)memoryWarningReceived:(NSNotification *)notification
+{
+     [self purgeRemovableInstances];
 }
 
 

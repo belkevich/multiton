@@ -14,6 +14,6 @@
 + (instancetype)sharedInstance;
 
 @optional
-- (BOOL)isRemoveOnMemoryWarning;
+- (BOOL)isRemovableInstance;
 
 @end
