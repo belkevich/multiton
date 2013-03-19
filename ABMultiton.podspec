@@ -8,6 +8,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/belkevich/multiton.git",
 		     :tag => "1.0.0"}
   s.platform     = :ios
-  s.platform	 = :osx
   s.source_files = '*.{h,m}'
 end
