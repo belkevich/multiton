@@ -6,7 +6,14 @@ It is not implementation of classic multiton. This implementation uses instance 
 
 # Installation
 
-Add multiton to project as submodule
+1. Install with [cocoa pods](http://cocoapods.org/)
+
+Add to [Podfile](https://github.com/CocoaPods/CocoaPods/wiki/A-Podfile)
+`pod 'ABMultiton'`
+And run command
+`pod install`
+
+2. Add multiton as git-submodule
 
 ```
 cd <project source directory>
@@ -68,7 +75,7 @@ of `ABMultitonProtocol`
 }
 ```
 And this instance will be released on memory warning.
-Or you can release all such instances
+Or you can release all such instances manually
 ```objective-c
 [ABMultiton purgeRemovableInstances];
 ```
