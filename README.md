@@ -6,9 +6,7 @@ It is not implementation of classic multiton. This implementation uses instance 
 
 # Installation
 
-Install with [cocoa pods](http://cocoapods.org/) or add as git submodule
-
-###### 1. Cocoa Pods
+###### Install with [cocoa pods](http://cocoapods.org/) 
 Add to [Podfile](https://github.com/CocoaPods/CocoaPods/wiki/A-Podfile)
 ```
 pod 'ABMultiton'
@@ -19,7 +17,7 @@ And run command
 pod install
 ```
 
-###### 2. Git submodule
+###### Install as Git submodule
 ```
 cd <project source directory>
 git submodule add https://github.com/belkevich/multiton.git <submodules directory>
