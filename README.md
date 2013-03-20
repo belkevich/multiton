@@ -7,14 +7,12 @@ It is not implementation of classic multiton. This implementation uses instance 
 # Installation
 
 1. Install with [cocoa pods](http://cocoapods.org/)
-
 Add to [Podfile](https://github.com/CocoaPods/CocoaPods/wiki/A-Podfile)
 `pod 'ABMultiton'`
 And run command
 `pod install`
 
 2. Add multiton as git-submodule
-
 ```
 cd <project source directory>
 git submodule add https://github.com/belkevich/multiton.git <submodules directory>
@@ -22,7 +20,7 @@ git submodule add https://github.com/belkevich/multiton.git <submodules director
 
 # Using
 
-## Prepare class
+### Prepare class
 
 1. Class should conforms to `ABMultitonProtocol`
 ```objective-c
@@ -47,20 +45,20 @@ git submodule add https://github.com/belkevich/multiton.git <submodules director
 
 3. Class should use `init` method for initialization. No Arguments!
 
-## Get shared instance
+### Get shared instance
 
 ```objective-c
 MyClass *instance = [MyClass sharedInstance];
 ```
 
-## Removing class instance from multiton
+### Removing class instance from multiton
 
 If you don't need shared instance anymore you can remove it by this call:
 ```objective-c
 [ABMultiton removeInstanceOfClass:yourClass];
 ```
 
-## Advanced instance management
+### Advanced instance management
 
 Sometimes you don't need shared instance for all app life cycle.
 And you may want to release some shared instances on low memory.
@@ -80,7 +78,7 @@ Or you can release all such instances manually
 [ABMultiton purgeRemovableInstances];
 ```
 
-## Thread safety
+### Thread safety
 
 Using `ABMultiton` is thread safe.
 
