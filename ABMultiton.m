@@ -145,12 +145,11 @@
         });
         if (!classInstance)
         {
-            classInstance = [[theClass alloc] init];
+            classInstance = [[[theClass alloc] init] autorelease];
             dispatch_async(lock, ^
             {
                 [instances setObject:classInstance forKey:className];
             });
-            [classInstance release];
         }
         return classInstance;
     }
