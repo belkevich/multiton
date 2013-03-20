@@ -1,5 +1,5 @@
 //
-//  ABSingletonProtocol.h
+//  ABMultitonProtocol.h
 //  ABMultiton
 //
 //  Created by Alexey Belkevich on 1/16/13.

@@ -9,14 +9,14 @@
 #import "ABMultiton.h"
 #import "ABMultitonProtocol.h"
 
-#define AB_MULTITON_EXCEPTION_PROTOCOL      @"class is not conforms to protocol ABMultitonProtocol"
+#define AB_MULTITON_EXCEPTION_PROTOCOL      @"class doesn't conforms to protocol 'ABMultitonProtocol'"
 
 @interface ABMultiton () <ABMultitonProtocol>
-
 - (id)sharedInstanceOfClass:(Class)theClass;
+- (id)getInstanceForKey:(NSString *)key;
 - (void)removeInstanceOfClass:(Class)theClass;
-- (void)memoryWarningReceived:(NSNotification *)notification;
 - (void)purgeRemovableInstances;
+- (void)memoryWarningReceived:(NSNotification *)notification;
 @end
 
 @implementation ABMultiton
@@ -98,6 +98,50 @@
     [[ABMultiton sharedInstance] purgeRemovableInstances];
 }
 
+#pragma mark -
+#pragma mark private
+
+- (id)sharedInstanceOfClass:(Class)theClass
+{
+    NSString *className = NSStringFromClass(theClass);
+    if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
+    {
+        id classInstance = [self getInstanceForKey:className];
+        if (!classInstance)
+        {
+            classInstance = [[[theClass alloc] init] autorelease];
+            dispatch_async(lock, ^
+            {
+                [instances setObject:classInstance forKey:className];
+            });
+        }
+        return classInstance;
+    }
+    NSString *reason = [NSString stringWithFormat:@"'%@' %@", className,
+                                                  AB_MULTITON_EXCEPTION_PROTOCOL];
+    @throw [NSException exceptionWithName:AB_MULTITON_EXCEPTION_PROTOCOL reason:reason
+                                 userInfo:nil];
+}
+
+- (id)getInstanceForKey:(NSString *)key
+{
+    __block id classInstance = nil;
+    dispatch_sync(lock, ^
+    {
+        classInstance = [instances objectForKey:key];
+    });
+    return classInstance;
+}
+
+- (void)removeInstanceOfClass:(Class)theClass
+{
+    NSString *className = NSStringFromClass(theClass);
+    dispatch_async(lock, ^
+    {
+        [instances removeObjectForKey:className];
+    });
+}
+
 - (void)purgeRemovableInstances
 {
     dispatch_async(lock, ^
@@ -114,49 +158,9 @@
     });
 }
 
-
 - (void)memoryWarningReceived:(NSNotification *)notification
 {
-     [self purgeRemovableInstances];
-}
-
-
-- (void)removeInstanceOfClass:(Class)theClass
-{
-    NSString *className = NSStringFromClass(theClass);
-    dispatch_async(lock, ^
-    {
-        [instances removeObjectForKey:className];
-    });
-}
-
-#pragma mark -
-#pragma mark private
-
-- (id)sharedInstanceOfClass:(Class)theClass
-{
-    NSString *className = NSStringFromClass(theClass);
-    if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
-    {
-        __block id classInstance = nil;
-        dispatch_sync(lock, ^
-        {
-            classInstance = [instances objectForKey:className];
-        });
-        if (!classInstance)
-        {
-            classInstance = [[[theClass alloc] init] autorelease];
-            dispatch_async(lock, ^
-            {
-                [instances setObject:classInstance forKey:className];
-            });
-        }
-        return classInstance;
-    }
-    NSString *reason = [NSString stringWithFormat:@"'%@' %@", className,
-                                                  AB_MULTITON_EXCEPTION_PROTOCOL];
-    @throw [NSException exceptionWithName:AB_MULTITON_EXCEPTION_PROTOCOL reason:reason
-                                 userInfo:nil];
+    [self purgeRemovableInstances];
 }
 
 @end
