@@ -13,7 +13,7 @@
 
 @interface ABMultiton () <ABMultitonProtocol>
 
-- (instancetype)sharedInstanceOfClass:(Class)theClass;
+- (id)sharedInstanceOfClass:(Class)theClass;
 - (void)removeInstanceOfClass:(Class)theClass;
 - (void)memoryWarningReceived:(NSNotification *)notification;
 - (void)purgeRemovableInstances;
@@ -83,7 +83,7 @@
 #pragma mark -
 #pragma mark actions
 
-+ (instancetype)sharedInstanceOfClass:(Class)theClass
++ (id)sharedInstanceOfClass:(Class)theClass
 {
     return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass];
 }
@@ -133,7 +133,7 @@
 #pragma mark -
 #pragma mark private
 
-- (instancetype)sharedInstanceOfClass:(Class)theClass
+- (id)sharedInstanceOfClass:(Class)theClass
 {
     NSString *className = NSStringFromClass(theClass);
     if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])

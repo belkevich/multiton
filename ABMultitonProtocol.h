@@ -11,7 +11,7 @@
 @protocol ABMultitonProtocol <NSObject>
 
 @required
-+ (instancetype)sharedInstance;
++ (id)sharedInstance;
 
 @optional
 - (BOOL)isRemovableInstance;
