@@ -10,10 +10,14 @@ Install with [cocoa pods](http://cocoapods.org/) or add as git submodule
 
 ###### 1. Cocoa Pods
 Add to [Podfile](https://github.com/CocoaPods/CocoaPods/wiki/A-Podfile)
-`pod 'ABMultiton'`
+```
+pod 'ABMultiton'
+```
 
 And run command
-`pod install`
+```
+pod install
+```
 
 ###### 2. Git submodule
 ```
