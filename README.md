@@ -3,7 +3,7 @@
 ---
 # About
 It is not implementation of classic multiton. This implementation uses instance `class name` as `key` to access instance.
-The most common way to use multiton as singletons factory.
+The most common way to use multiton is painless singleton creation.
 
 # Installation
 
@@ -43,7 +43,7 @@ git submodule add https://github.com/belkevich/multiton.git <submodules director
 ...
 @implementation MyClass
 ...
-+ (id)sharedIsntance
++ (instancetype)sharedIsntance
 {
     return [ABMultiton sharedInstanceOfClass:[self class]];
 }
