@@ -33,17 +33,21 @@
     {
         instances = [[NSMutableDictionary alloc] init];
         lock = dispatch_queue_create("multiton queue", NULL);
+#if TARGET_OS_IPHONE
         [[NSNotificationCenter defaultCenter]
                                addObserver:self selector:@selector(memoryWarningReceived:)
                                       name:UIApplicationDidReceiveMemoryWarningNotification
                                     object:nil];
+#endif
     }
     return self;
 }
 
 - (void)dealloc
 {
+#if TARGET_OS_IPHONE
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+#endif
 #if !OS_OBJECT_USE_OBJC
     if (lock)
     {
