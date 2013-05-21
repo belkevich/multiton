@@ -85,6 +85,12 @@
     [[ABMultiton sharedInstance] purgeRemovableInstances];
 }
 
++ (BOOL)containsInstanceOfClass:(Class)theClass
+{
+    NSString *className = NSStringFromClass(theClass);
+    return ([[ABMultiton sharedInstance] getInstanceForKey:className] != nil);
+}
+
 #pragma mark -
 #pragma mark private
 

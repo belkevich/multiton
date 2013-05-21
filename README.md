@@ -3,7 +3,7 @@
 ---
 # About
 It is not implementation of classic multiton. This implementation uses instance `class name` as `key` to access instance.
-The most common way to use multiton is painless singleton creation.
+The most common way to use multiton is a painless singleton creation.
 
 # Installation
 

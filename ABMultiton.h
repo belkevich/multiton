@@ -18,5 +18,6 @@
 + (id)sharedInstanceOfClass:(Class)theClass;
 + (void)removeInstanceOfClass:(Class)theClass;
 + (void)purgeRemovableInstances;
++ (BOOL)containsInstanceOfClass:(Class)theClass;
 
 @end
