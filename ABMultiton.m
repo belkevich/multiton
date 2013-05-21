@@ -12,11 +12,13 @@
 #define AB_MULTITON_EXCEPTION_PROTOCOL      @"class doesn't conforms to protocol 'ABMultitonProtocol'"
 
 @interface ABMultiton () <ABMultitonProtocol>
+
 - (id)sharedInstanceOfClass:(Class)theClass;
 - (id)getInstanceForKey:(NSString *)key;
 - (void)removeInstanceOfClass:(Class)theClass;
 - (void)purgeRemovableInstances;
 - (void)memoryWarningReceived:(NSNotification *)notification;
+
 @end
 
 @implementation ABMultiton
@@ -42,28 +44,13 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [instances release];
-    [super dealloc];
-}
+#if !OS_OBJECT_USE_OBJC
+    if (lock)
+    {
+        dispatch_release(lock);
+    }
+#endif
 
-- (id)retain
-{
-    return self;
-}
-
-- (unsigned)retainCount
-{
-    return UINT_MAX;
-}
-
-- (oneway void)release
-{
-    // nothing to do
-}
-
-- (id)autorelease
-{
-    return self;
 }
 
 #pragma mark -
@@ -109,7 +96,7 @@
         id classInstance = [self getInstanceForKey:className];
         if (!classInstance)
         {
-            classInstance = [[[theClass alloc] init] autorelease];
+            classInstance = [[theClass alloc] init];
             dispatch_async(lock, ^
             {
                 [instances setObject:classInstance forKey:className];
