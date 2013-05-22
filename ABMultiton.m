@@ -17,7 +17,10 @@
 - (id)getInstanceForKey:(NSString *)key;
 - (void)removeInstanceOfClass:(Class)theClass;
 - (void)purgeRemovableInstances;
+
+#if TARGET_OS_IPHONE
 - (void)memoryWarningReceived:(NSNotification *)notification;
+#endif
 
 @end
 
@@ -48,13 +51,13 @@
 #if TARGET_OS_IPHONE
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 #endif
+
 #if !OS_OBJECT_USE_OBJC
     if (lock)
     {
         dispatch_release(lock);
     }
 #endif
-
 }
 
 #pragma mark -
@@ -155,9 +158,11 @@
     });
 }
 
+#if TARGET_OS_IPHONE
 - (void)memoryWarningReceived:(NSNotification *)notification
 {
     [self purgeRemovableInstances];
 }
+#endif
 
 @end
