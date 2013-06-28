@@ -4,9 +4,11 @@
 ## About
 It is not implementation of classic multiton. This implementation uses instance `class name` as `key` to access instance.
 The most common way to use multiton is a singleton creation with several advantages:
-* You can remove shared instance when you don't need it anymore
-* You can instanciate class and use it as regular object and don't have any memory leaks 
-* You can use both shared instance and regular instances of the same class
+* Remove shared instance when you don't need it anymore
+* Use both shared instance and regular instances of the same class
+* Create shared instance with custom `init` method with arguments 
+
+---
 
 ## Installation
 
@@ -28,6 +30,9 @@ cd <project source directory>
 git submodule add https://github.com/belkevich/multiton.git <submodules directory>
 ```
 And if you project don't uses ARC you should convert ABMultiton.m file to ARC.
+
+---
+
 ## Using
 
 #### Prepare class
@@ -40,7 +45,7 @@ And if you project don't uses ARC you should convert ABMultiton.m file to ARC.
 @end
 ```
 
-2. Class should implement `sharedInstance` method in this way:
+2. Class should implement `sharedInstance` method for default `init` in this way:
 ```objective-c
 #import "ABMultiton.h"
 ...
@@ -52,7 +57,19 @@ And if you project don't uses ARC you should convert ABMultiton.m file to ARC.
 }
 ```
 
-3. Class should use `init` method for initialization. No Arguments!
+3. Class should implement `sharedInstance` method for custom `init` in this way:
+```objective-c
+...
++ (instancetype)sharedIsntance
+{
+    return [ABMultiton sharedInstanceOfClass:[seld class]
+                               withInitBlock:^id
+    {
+        return [[self alloc] initWithSomeArgument:argument];
+    }];
+}
+...
+```
 
 ---
 
@@ -96,7 +113,7 @@ Using `ABMultiton` is thread safe.
 
 ---
 
-## Important warning
+#### Important warning
 Please, don't create shared instance for class if you can. "Singleton mania" is a well known anti-pattern.
 
 ---
