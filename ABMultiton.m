@@ -11,19 +11,6 @@
 
 #define AB_MULTITON_EXCEPTION_PROTOCOL      @"class doesn't conforms to protocol 'ABMultitonProtocol'"
 
-@interface ABMultiton () <ABMultitonProtocol>
-
-- (id)sharedInstanceOfClass:(Class)theClass;
-- (id)getInstanceForKey:(NSString *)key;
-- (void)removeInstanceOfClass:(Class)theClass;
-- (void)purgeRemovableInstances;
-
-#if TARGET_OS_IPHONE
-- (void)memoryWarningReceived:(NSNotification *)notification;
-#endif
-
-@end
-
 @implementation ABMultiton
 
 #pragma mark -
@@ -61,7 +48,7 @@
 }
 
 #pragma mark -
-#pragma mark singleton protocol implementation
+#pragma mark shared instance
 
 + (instancetype)sharedInstance
 {
@@ -79,7 +66,12 @@
 
 + (id)sharedInstanceOfClass:(Class)theClass
 {
-    return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass];
+    return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass withInitBlock:nil];
+}
+
++ (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(ABInitBlock)initBlock
+{
+    return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass withInitBlock:initBlock];
 }
 
 + (void)removeInstanceOfClass:(Class)theClass
@@ -101,7 +93,7 @@
 #pragma mark -
 #pragma mark private
 
-- (id)sharedInstanceOfClass:(Class)theClass
+- (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(ABInitBlock)initBlock
 {
     NSString *className = NSStringFromClass(theClass);
     if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
@@ -109,7 +101,7 @@
         id classInstance = [self getInstanceForKey:className];
         if (!classInstance)
         {
-            classInstance = [[theClass alloc] init];
+            classInstance = initBlock ? initBlock() : [[theClass alloc] init];
             dispatch_async(lock, ^
             {
                 [instances setObject:classInstance forKey:className];
