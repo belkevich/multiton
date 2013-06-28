@@ -36,7 +36,8 @@ And if you project don't uses ARC you should convert ABMultiton.m file to ARC.
 ## Using
 
 #### Prepare class
-1. Class should conforms to `ABMultitonProtocol`
+Class should conforms to `ABMultitonProtocol`
+
 ```objective-c
 #import "ABMultitonProtocol.h"
 ...
@@ -45,7 +46,8 @@ And if you project don't uses ARC you should convert ABMultiton.m file to ARC.
 @end
 ```
 
-2. Class should implement `sharedInstance` method for default `init` in this way:
+Class should implement `sharedInstance` method for default `init` in this way:
+
 ```objective-c
 #import "ABMultiton.h"
 ...
@@ -57,7 +59,8 @@ And if you project don't uses ARC you should convert ABMultiton.m file to ARC.
 }
 ```
 
-3. Class should implement `sharedInstance` method for custom `init` in this way:
+Class should implement `sharedInstance` method for custom `init` in this way:
+
 ```objective-c
 ...
 + (instancetype)sharedIsntance
