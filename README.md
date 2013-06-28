@@ -98,3 +98,8 @@ Using `ABMultiton` is thread safe.
 
 ## Important warning
 Please, don't create shared instance for class if you can. "Singleton mania" is a well known anti-pattern.
+
+---
+
+## Updates
+Stay tuned with `ABMultiton` updates on [@okolodev](https://twitter.com/okolodev)
