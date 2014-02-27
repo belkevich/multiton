@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "Alexey Belkevich" => "belkevich.alexey@gmail.com" }
   s.source       = { :git => "https://github.com/belkevich/multiton.git",
 		     :tag => s.version.to_s }
-  s.source_files = '*.{h,m}'
+  s.source_files = 'ABMultiton/*.{h,m}'
   s.ios.deployment_target = "5.0"
   s.osx.deployment_target = "10.7"
   s.requires_arc = true
