@@ -9,7 +9,7 @@
 #import "ABMultiton.h"
 #import "ABMultitonProtocol.h"
 
-NSString * const kMultitonException = @"class doesn't conforms to protocol 'ABMultitonProtocol'";
+NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonProtocol'";
 
 @implementation ABMultiton
 
