@@ -9,7 +9,7 @@
 #import "ABMultiton.h"
 #import "ABMultitonProtocol.h"
 
-#define AB_MULTITON_EXCEPTION_PROTOCOL  @"class doesn't conforms to protocol 'ABMultitonProtocol'"
+NSString * const kMultitonException = @"class doesn't conforms to protocol 'ABMultitonProtocol'";
 
 @implementation ABMultiton
 
@@ -109,10 +109,8 @@
         }
         return classInstance;
     }
-    NSString *reason = [NSString stringWithFormat:@"'%@' %@", className,
-                                                  AB_MULTITON_EXCEPTION_PROTOCOL];
-    @throw [NSException exceptionWithName:AB_MULTITON_EXCEPTION_PROTOCOL reason:reason
-                                 userInfo:nil];
+    NSString *reason = [NSString stringWithFormat:@"'%@' %@", className, kMultitonException];
+    @throw [NSException exceptionWithName:kMultitonException reason:reason userInfo:nil];
 }
 
 - (id)getInstanceForKey:(NSString *)key

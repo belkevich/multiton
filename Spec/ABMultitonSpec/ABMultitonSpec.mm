@@ -61,6 +61,11 @@ describe(@"ABMultiton", ^
                                              object:nil];
         [ABMultiton containsInstanceOfClass:SimpleObject.class] should equal(NO);
     });
+
+    it(@"should throw exception if class doesn't conforms ABMultitonProtocol", ^
+    {
+        ^{[ABMultiton sharedInstanceOfClass:NSObject.class];} should raise_exception;
+    });
 });
 
 SPEC_END
