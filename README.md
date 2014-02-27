@@ -1,6 +1,8 @@
 [Multiton pattern](http://en.wikipedia.org/wiki/Multiton_pattern) implementation in Objective-C
 ========
 
+[![Build Status](https://travis-ci.org/belkevich/multiton.png?branch=master)](https://travis-ci.org/belkevich/multiton)
+
 ## About
 It is not implementation of classic multiton. This implementation uses instance `class name` as `key` to access instance.
 The most common way to use multiton is a singleton creation with several advantages:
