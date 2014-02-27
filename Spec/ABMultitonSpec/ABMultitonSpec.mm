@@ -34,6 +34,19 @@ describe(@"ABMultiton", ^
         instance should be_instance_of(SimpleObject.class);
     });
 
+    it(@"should create shared instance with custom initialization block", ^
+    {
+        [ABMultiton removeInstanceOfClass:SimpleObject.class];
+        [ABMultiton sharedInstanceOfClass:SimpleObject.class withInitBlock:^id
+        {
+            SimpleObject *object = [[SimpleObject alloc] init];
+            object.shouldRemove = YES;
+            return object;
+        }];
+        SimpleObject.sharedInstance should_not be_nil;
+        SimpleObject.sharedInstance.shouldRemove should equal(YES);
+    });
+
     it(@"should remove shared instance", ^
     {
         [ABMultiton removeInstanceOfClass:instance.class];

@@ -11,6 +11,13 @@
 
 NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonProtocol'";
 
+@interface ABMultiton ()
+{
+    NSMutableDictionary *_instances;
+    dispatch_queue_t _lock;
+}
+@end;
+
 @implementation ABMultiton
 
 #pragma mark -
@@ -21,8 +28,8 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
     self = [super init];
     if (self)
     {
-        instances = [[NSMutableDictionary alloc] init];
-        lock = dispatch_queue_create("multiton queue", NULL);
+        _instances = [[NSMutableDictionary alloc] init];
+        _lock = dispatch_queue_create("org.okolodev.multiton_queue", NULL);
 #if TARGET_OS_IPHONE
         [[NSNotificationCenter defaultCenter]
                                addObserver:self selector:@selector(memoryWarningReceived:)
@@ -62,7 +69,7 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
 }
 
 #pragma mark -
-#pragma mark actions
+#pragma mark public
 
 + (id)sharedInstanceOfClass:(Class)theClass
 {
@@ -102,9 +109,9 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
         if (!classInstance)
         {
             classInstance = initBlock ? initBlock() : [[theClass alloc] init];
-            dispatch_async(lock, ^
+            dispatch_async(_lock, ^
             {
-                [instances setObject:classInstance forKey:className];
+                [_instances setObject:classInstance forKey:className];
             });
         }
         return classInstance;
@@ -116,9 +123,9 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
 - (id)getInstanceForKey:(NSString *)key
 {
     __block id classInstance = nil;
-    dispatch_sync(lock, ^
+    dispatch_sync(_lock, ^
     {
-        classInstance = [instances objectForKey:key];
+        classInstance = [_instances objectForKey:key];
     });
     return classInstance;
 }
@@ -126,17 +133,17 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
 - (void)removeInstanceOfClass:(Class)theClass
 {
     NSString *className = NSStringFromClass(theClass);
-    dispatch_async(lock, ^
+    dispatch_async(_lock, ^
     {
-        [instances removeObjectForKey:className];
+        [_instances removeObjectForKey:className];
     });
 }
 
 - (void)purgeRemovableInstances
 {
-    dispatch_async(lock, ^
+    dispatch_async(_lock, ^
     {
-        NSSet *keys = [instances keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop)
+        NSSet *keys = [_instances keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop)
         {
             if ([obj respondsToSelector:@selector(isRemovableInstance)])
             {
@@ -144,7 +151,7 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
             }
             return NO;
         }];
-        [instances removeObjectsForKeys:[keys allObjects]];
+        [_instances removeObjectsForKeys:[keys allObjects]];
     });
 }
 

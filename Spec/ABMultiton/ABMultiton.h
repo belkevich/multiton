@@ -11,12 +11,7 @@
 typedef id (^ABInitBlock)();
 
 @interface ABMultiton : NSObject
-{
-    NSMutableDictionary *instances;
-    dispatch_queue_t lock;
-}
 
-// actions
 + (id)sharedInstanceOfClass:(Class)theClass;
 + (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(ABInitBlock)initBlock;
 + (void)removeInstanceOfClass:(Class)theClass;
