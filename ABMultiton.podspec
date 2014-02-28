@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ABMultiton"
-  s.version      = "2.0.0"
+  s.version      = "2.0.1"
   s.summary      = "Multiton is a better alternative to singleton."
   s.homepage     = "https://github.com/belkevich/multiton"
   s.license      = { :type => 'MIT', :file => 'LICENSE.txt' }
