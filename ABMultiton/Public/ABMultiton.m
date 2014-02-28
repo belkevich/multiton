@@ -30,7 +30,6 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
     {
         _instances = [[NSMutableDictionary alloc] init];
         _lock = dispatch_queue_create("org.okolodev.multiton_queue", NULL);
-        [ABMultitonInjector injectMultitonProtocolMethods];
 #if TARGET_OS_IPHONE
         [[NSNotificationCenter defaultCenter]
                                addObserver:self selector:@selector(memoryWarningReceived:)
@@ -66,6 +65,14 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
         instance = [[ABMultiton alloc] init];
     });
     return instance;
+}
+
+#pragma mark - initialize
+
++ (void)initialize
+{
+    [super initialize];
+    [ABMultitonInjector injectMultitonProtocolMethods];
 }
 
 #pragma mark - public
