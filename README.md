@@ -6,7 +6,7 @@ Multiton
 Multiton is a better alternative to singleton. It's more flexible and require less code lines to implement. 
 
 Features:
-* Make shared instance of class just by including 'ABMultitonProtocol' to class interface. No implementation needed!
+* Make shared instance of class just by including `ABMultitonProtocol` to class interface. No implementation needed!
 * Remove shared instance of class when you don't need it anymore (unit-tests!). No more immortal instances!
 * Specify is shared instance should be removed on memory warning. 
 * Create shared instance with custom `init` method with arguments. 
