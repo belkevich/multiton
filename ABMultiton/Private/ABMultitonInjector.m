@@ -27,7 +27,7 @@ id multitonInstance(id self, SEL _cmd)
     if (classesArray)
     {
         Protocol *multitonProtocol = @protocol(ABMultitonProtocol);
-        SEL multitonMethod = @selector(sharedInstance);
+        SEL multitonMethod = @selector(shared);
         for (unsigned int i = 0; i < count; i++)
         {
             Class currentClass = classesArray[i];

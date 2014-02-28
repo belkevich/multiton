@@ -8,15 +8,11 @@
 
 #import "SimpleObject.h"
 #import "ABMultiton.h"
-#import <objc/objc-runtime.h>
 
 @implementation SimpleObject
 
-+ (instancetype)sharedInstance
++ (instancetype)shared
 {
-//    [[self class] respondsToSelector:@selector(zalupa)];
-//    Class huy = objc_getClass("SimpleObject");
-//    NSLog(@"huy %d, %d, %d", class_respondsToSelector(huy, @selector(zalupa)), class_getClassMethod(self, @selector(zalupa)) != NULL, [self respondsToSelector:@selector(sharedInstance)]);
     return [ABMultiton sharedInstanceOfClass:self];
 }
 

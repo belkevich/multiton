@@ -20,7 +20,7 @@ describe(@"ABMultiton", ^
 
     beforeEach(^
                {
-                   instance = SimpleObject.sharedInstance;
+                   instance = SimpleObject.shared;
                });
 
     afterEach(^
@@ -44,14 +44,14 @@ describe(@"ABMultiton", ^
             object.shouldRemove = YES;
             return object;
         }];
-        SimpleObject.sharedInstance should_not be_nil;
-        SimpleObject.sharedInstance.shouldRemove should equal(YES);
+        SimpleObject.shared should_not be_nil;
+        SimpleObject.shared.shouldRemove should equal(YES);
     });
 
     it(@"should inject shared instance method if it doesn't impelented", ^
     {
         __block MagicObject *object;
-        ^{object = MagicObject.sharedInstance;} should_not raise_exception;
+        ^{object = MagicObject.shared;} should_not raise_exception;
         object should_not be_nil;
         object should be_instance_of(MagicObject.class);
     });
