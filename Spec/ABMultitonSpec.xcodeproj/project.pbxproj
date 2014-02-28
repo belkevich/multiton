@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		24A46DB1965947A09D6E379B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39007D8C259A4DC9B9A0AD65 /* libPods.a */; };
+		FA22235018C07E2E009644EE /* MagicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22234F18C07E2E009644EE /* MagicObject.m */; };
+		FA22235718C08077009644EE /* ABMultiton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22235518C08077009644EE /* ABMultiton.m */; };
+		FA22235A18C08093009644EE /* ABMultitonInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22235918C08093009644EE /* ABMultitonInjector.m */; };
 		FA465E8318BFB7E100B59BCC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA465E8218BFB7E100B59BCC /* Foundation.framework */; };
 		FA465E8518BFB7E100B59BCC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA465E8418BFB7E100B59BCC /* CoreGraphics.framework */; };
 		FA465E8718BFB7E100B59BCC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA465E8618BFB7E100B59BCC /* UIKit.framework */; };
@@ -15,13 +18,19 @@
 		FA465E8F18BFB7E100B59BCC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA465E8E18BFB7E100B59BCC /* main.m */; };
 		FA465E9518BFB7E100B59BCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA465E9418BFB7E100B59BCC /* Images.xcassets */; };
 		FA465EB318BFB94900B59BCC /* ABMultitonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA465EB218BFB94900B59BCC /* ABMultitonSpec.mm */; };
-		FA465EB818BFBCA800B59BCC /* ABMultiton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA465EB618BFBCA800B59BCC /* ABMultiton.m */; };
 		FA465EBC18BFDA2A00B59BCC /* SimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA465EBB18BFDA2A00B59BCC /* SimpleObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39007D8C259A4DC9B9A0AD65 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D810A32498047E3AE2E0668 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FA22234E18C07E2E009644EE /* MagicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicObject.h; sourceTree = "<group>"; };
+		FA22234F18C07E2E009644EE /* MagicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicObject.m; sourceTree = "<group>"; };
+		FA22235418C08077009644EE /* ABMultiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultiton.h; sourceTree = "<group>"; };
+		FA22235518C08077009644EE /* ABMultiton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMultiton.m; sourceTree = "<group>"; };
+		FA22235618C08077009644EE /* ABMultitonProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultitonProtocol.h; sourceTree = "<group>"; };
+		FA22235818C08093009644EE /* ABMultitonInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultitonInjector.h; sourceTree = "<group>"; };
+		FA22235918C08093009644EE /* ABMultitonInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMultitonInjector.m; sourceTree = "<group>"; };
 		FA465E7F18BFB7E100B59BCC /* ABMultitonSpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABMultitonSpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA465E8218BFB7E100B59BCC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA465E8418BFB7E100B59BCC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -33,9 +42,6 @@
 		FA465E9418BFB7E100B59BCC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA465E9B18BFB7E100B59BCC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FA465EB218BFB94900B59BCC /* ABMultitonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonSpec.mm; sourceTree = "<group>"; };
-		FA465EB518BFBCA800B59BCC /* ABMultiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultiton.h; sourceTree = "<group>"; };
-		FA465EB618BFBCA800B59BCC /* ABMultiton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMultiton.m; sourceTree = "<group>"; };
-		FA465EB718BFBCA800B59BCC /* ABMultitonProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultitonProtocol.h; sourceTree = "<group>"; };
 		FA465EBA18BFDA2A00B59BCC /* SimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleObject.h; sourceTree = "<group>"; };
 		FA465EBB18BFDA2A00B59BCC /* SimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,10 +61,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA22235118C08077009644EE /* ABMultiton */ = {
+			isa = PBXGroup;
+			children = (
+				FA22235318C08077009644EE /* Public */,
+				FA22235218C08077009644EE /* Private */,
+			);
+			name = ABMultiton;
+			path = ../ABMultiton;
+			sourceTree = "<group>";
+		};
+		FA22235218C08077009644EE /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				FA22235818C08093009644EE /* ABMultitonInjector.h */,
+				FA22235918C08093009644EE /* ABMultitonInjector.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		FA22235318C08077009644EE /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				FA22235418C08077009644EE /* ABMultiton.h */,
+				FA22235518C08077009644EE /* ABMultiton.m */,
+				FA22235618C08077009644EE /* ABMultitonProtocol.h */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		FA465E7618BFB7E100B59BCC = {
 			isa = PBXGroup;
 			children = (
-				FA465EB418BFBCA800B59BCC /* ABMultiton */,
+				FA22235118C08077009644EE /* ABMultiton */,
 				FA465E8818BFB7E100B59BCC /* ABMultitonSpec */,
 				FA465E8118BFB7E100B59BCC /* Frameworks */,
 				FA465E8018BFB7E100B59BCC /* Products */,
@@ -116,21 +151,13 @@
 			name = Spec;
 			sourceTree = "<group>";
 		};
-		FA465EB418BFBCA800B59BCC /* ABMultiton */ = {
-			isa = PBXGroup;
-			children = (
-				FA465EB518BFBCA800B59BCC /* ABMultiton.h */,
-				FA465EB618BFBCA800B59BCC /* ABMultiton.m */,
-				FA465EB718BFBCA800B59BCC /* ABMultitonProtocol.h */,
-			);
-			path = ABMultiton;
-			sourceTree = "<group>";
-		};
 		FA465EB918BFD9F800B59BCC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				FA465EBA18BFDA2A00B59BCC /* SimpleObject.h */,
 				FA465EBB18BFDA2A00B59BCC /* SimpleObject.m */,
+				FA22234E18C07E2E009644EE /* MagicObject.h */,
+				FA22234F18C07E2E009644EE /* MagicObject.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -233,10 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA465EB818BFBCA800B59BCC /* ABMultiton.m in Sources */,
+				FA22235A18C08093009644EE /* ABMultitonInjector.m in Sources */,
 				FA465E8F18BFB7E100B59BCC /* main.m in Sources */,
+				FA22235018C07E2E009644EE /* MagicObject.m in Sources */,
 				FA465EBC18BFDA2A00B59BCC /* SimpleObject.m in Sources */,
 				FA465EB318BFB94900B59BCC /* ABMultitonSpec.mm in Sources */,
+				FA22235718C08077009644EE /* ABMultiton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

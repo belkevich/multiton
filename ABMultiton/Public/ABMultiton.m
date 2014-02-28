@@ -8,20 +8,20 @@
 
 #import "ABMultiton.h"
 #import "ABMultitonProtocol.h"
+#import "ABMultitonInjector.h"
 
-NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonProtocol'";
+NSString * const kMultitonException = @"class doesn't conforms to protocol ABMultitonProtocol'";
 
 @interface ABMultiton ()
 {
     NSMutableDictionary *_instances;
     dispatch_queue_t _lock;
 }
-@end;
+@end
 
 @implementation ABMultiton
 
-#pragma mark -
-#pragma mark main routine
+#pragma mark - main routine
 
 - (id)init
 {
@@ -30,6 +30,7 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
     {
         _instances = [[NSMutableDictionary alloc] init];
         _lock = dispatch_queue_create("org.okolodev.multiton_queue", NULL);
+        [ABMultitonInjector injectMultitonProtocolMethods];
 #if TARGET_OS_IPHONE
         [[NSNotificationCenter defaultCenter]
                                addObserver:self selector:@selector(memoryWarningReceived:)
@@ -54,8 +55,7 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
 #endif
 }
 
-#pragma mark -
-#pragma mark shared instance
+#pragma mark - shared instance
 
 + (instancetype)sharedInstance
 {
@@ -68,8 +68,7 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
     return instance;
 }
 
-#pragma mark -
-#pragma mark public
+#pragma mark - public
 
 + (id)sharedInstanceOfClass:(Class)theClass
 {
@@ -97,18 +96,17 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
     return ([[ABMultiton sharedInstance] getInstanceForKey:className] != nil);
 }
 
-#pragma mark -
-#pragma mark private
+#pragma mark - private
 
 - (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(ABInitBlock)initBlock
 {
     NSString *className = NSStringFromClass(theClass);
     if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
     {
-        __block id classInstance = nil;
+        __block id classInstance;
         dispatch_sync(_lock, ^
         {
-            classInstance = [_instances objectForKey:NSStringFromClass(theClass)];
+            classInstance = [_instances objectForKey:className];
             if (!classInstance)
             {
                 classInstance = initBlock ? initBlock() : [[theClass alloc] init];
@@ -117,11 +115,8 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
         });
         return classInstance;
     }
-    else
-    {
-        NSString *reason = [NSString stringWithFormat:@"'%@' %@", className, kMultitonException];
-        @throw [NSException exceptionWithName:kMultitonException reason:reason userInfo:nil];
-    }
+    NSString *reason = [NSString stringWithFormat:@"'%@' %@", className, kMultitonException];
+    @throw [NSException exceptionWithName:kMultitonException reason:reason userInfo:nil];
 }
 
 - (id)getInstanceForKey:(NSString *)key
@@ -138,7 +133,8 @@ NSString * const kMultitonException = @"class doesn't conforms to 'ABMultitonPro
 {
     dispatch_async(_lock, ^
     {
-        [_instances removeObjectForKey:NSStringFromClass(theClass)];
+        NSString *className = NSStringFromClass(theClass);
+        [_instances removeObjectForKey:className];
     });
 }
 
