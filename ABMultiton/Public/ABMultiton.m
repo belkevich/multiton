@@ -48,9 +48,9 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
 #endif
 
 #if !OS_OBJECT_USE_OBJC
-    if (lock)
+    if (_lock)
     {
-        dispatch_release(lock);
+        dispatch_release(_lock);
     }
 #endif
 }
