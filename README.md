@@ -4,6 +4,7 @@ Multiton
 [![Build Status](https://travis-ci.org/belkevich/multiton.png?branch=master)](https://travis-ci.org/belkevich/multiton)
 
 Multiton is a better alternative to singleton. It's more flexible and require less code lines to implement. 
+
 Features:
 * Make shared instance of class just by including 'ABMultitonProtocol' to class interface. No implementation needed!
 * Remove shared instance of class when you don't need it anymore (unit-tests!). No more immortal instances!
@@ -11,6 +12,7 @@ Features:
 * Create shared instance with custom `init` method with arguments. 
 
 **Warning**
+
 This is not implementation of classic [multiton](http://en.wikipedia.org/wiki/Multiton_pattern). This implementation uses instance `class name` as `key` to access instance.
 
 ---
@@ -108,4 +110,4 @@ Please, don't create shared instance for class if you can. "Singleton mania" is 
 ---
 
 #### Updates
-Stay tuned with **ABMultiton** updates on [@okolodev](https://twitter.com/okolodev)
+Stay tuned with **ABMultiton** updates at [@okolodev](https://twitter.com/okolodev)
