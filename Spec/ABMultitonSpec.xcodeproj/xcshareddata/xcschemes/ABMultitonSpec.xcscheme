@@ -38,6 +38,16 @@
                ReferencedContainer = "container:ABMultitonSpec.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FA71A87518C5EE80005916EA"
+               BuildableName = "ABMultitonAppTests.xctest"
+               BlueprintName = "ABMultitonAppTests"
+               ReferencedContainer = "container:ABMultitonSpec.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

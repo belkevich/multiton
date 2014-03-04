@@ -67,12 +67,15 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
     return instance;
 }
 
-#pragma mark - initialize
+#pragma mark - load
 
-+ (void)initialize
++ (void)load
 {
-    [super initialize];
-    [ABMultitonInjector injectMultitonProtocolMethods];
+    [super load];
+    @autoreleasepool
+    {
+        [ABMultitonInjector injectMultitonProtocolMethods];
+    }
 }
 
 #pragma mark - public

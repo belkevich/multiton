@@ -19,6 +19,16 @@
 		FA465E9518BFB7E100B59BCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA465E9418BFB7E100B59BCC /* Images.xcassets */; };
 		FA465EB318BFB94900B59BCC /* ABMultitonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA465EB218BFB94900B59BCC /* ABMultitonSpec.mm */; };
 		FA465EBC18BFDA2A00B59BCC /* SimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA465EBB18BFDA2A00B59BCC /* SimpleObject.m */; };
+		FA71A86118C5EE80005916EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA465E8218BFB7E100B59BCC /* Foundation.framework */; };
+		FA71A86218C5EE80005916EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA465E8418BFB7E100B59BCC /* CoreGraphics.framework */; };
+		FA71A86318C5EE80005916EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA465E8618BFB7E100B59BCC /* UIKit.framework */; };
+		FA71A86918C5EE80005916EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA71A86718C5EE80005916EA /* InfoPlist.strings */; };
+		FA71A86B18C5EE80005916EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71A86A18C5EE80005916EA /* main.m */; };
+		FA71A86F18C5EE80005916EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA71A86E18C5EE80005916EA /* AppDelegate.m */; };
+		FA71A87118C5EE80005916EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA71A87018C5EE80005916EA /* Images.xcassets */; };
+		FA71A88B18C5EECD005916EA /* MagicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22234F18C07E2E009644EE /* MagicObject.m */; };
+		FA71A88C18C5EF5D005916EA /* ABMultiton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22235518C08077009644EE /* ABMultiton.m */; };
+		FA71A88D18C5EF78005916EA /* ABMultitonInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22235918C08093009644EE /* ABMultitonInjector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +54,14 @@
 		FA465EB218BFB94900B59BCC /* ABMultitonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonSpec.mm; sourceTree = "<group>"; };
 		FA465EBA18BFDA2A00B59BCC /* SimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleObject.h; sourceTree = "<group>"; };
 		FA465EBB18BFDA2A00B59BCC /* SimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleObject.m; sourceTree = "<group>"; };
+		FA71A86018C5EE80005916EA /* ABMultitonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABMultitonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA71A86618C5EE80005916EA /* ABMultitonApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ABMultitonApp-Info.plist"; sourceTree = "<group>"; };
+		FA71A86818C5EE80005916EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FA71A86A18C5EE80005916EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA71A86C18C5EE80005916EA /* ABMultitonApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABMultitonApp-Prefix.pch"; sourceTree = "<group>"; };
+		FA71A86D18C5EE80005916EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FA71A86E18C5EE80005916EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FA71A87018C5EE80005916EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +73,16 @@
 				FA465E8718BFB7E100B59BCC /* UIKit.framework in Frameworks */,
 				FA465E8318BFB7E100B59BCC /* Foundation.framework in Frameworks */,
 				24A46DB1965947A09D6E379B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA71A85D18C5EE80005916EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA71A86218C5EE80005916EA /* CoreGraphics.framework in Frameworks */,
+				FA71A86318C5EE80005916EA /* UIKit.framework in Frameworks */,
+				FA71A86118C5EE80005916EA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +123,7 @@
 			children = (
 				FA22235118C08077009644EE /* ABMultiton */,
 				FA465E8818BFB7E100B59BCC /* ABMultitonSpec */,
+				FA71A86418C5EE80005916EA /* ABMultitonApp */,
 				FA465E8118BFB7E100B59BCC /* Frameworks */,
 				FA465E8018BFB7E100B59BCC /* Products */,
 				6D810A32498047E3AE2E0668 /* Pods.xcconfig */,
@@ -105,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				FA465E7F18BFB7E100B59BCC /* ABMultitonSpec.app */,
+				FA71A86018C5EE80005916EA /* ABMultitonApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,6 +192,36 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		FA71A86418C5EE80005916EA /* ABMultitonApp */ = {
+			isa = PBXGroup;
+			children = (
+				FA71A88A18C5EE9C005916EA /* AppDelegate */,
+				FA71A86518C5EE80005916EA /* Supporting Files */,
+			);
+			path = ABMultitonApp;
+			sourceTree = "<group>";
+		};
+		FA71A86518C5EE80005916EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA71A87018C5EE80005916EA /* Images.xcassets */,
+				FA71A86618C5EE80005916EA /* ABMultitonApp-Info.plist */,
+				FA71A86718C5EE80005916EA /* InfoPlist.strings */,
+				FA71A86A18C5EE80005916EA /* main.m */,
+				FA71A86C18C5EE80005916EA /* ABMultitonApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA71A88A18C5EE9C005916EA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA71A86D18C5EE80005916EA /* AppDelegate.h */,
+				FA71A86E18C5EE80005916EA /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +242,23 @@
 			name = ABMultitonSpec;
 			productName = ABMultitonSpec;
 			productReference = FA465E7F18BFB7E100B59BCC /* ABMultitonSpec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA71A85F18C5EE80005916EA /* ABMultitonApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA71A88818C5EE80005916EA /* Build configuration list for PBXNativeTarget "ABMultitonApp" */;
+			buildPhases = (
+				FA71A85C18C5EE80005916EA /* Sources */,
+				FA71A85D18C5EE80005916EA /* Frameworks */,
+				FA71A85E18C5EE80005916EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ABMultitonApp;
+			productName = ABMultitonApp;
+			productReference = FA71A86018C5EE80005916EA /* ABMultitonApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -206,6 +283,7 @@
 			projectRoot = "";
 			targets = (
 				FA465E7E18BFB7E100B59BCC /* ABMultitonSpec */,
+				FA71A85F18C5EE80005916EA /* ABMultitonApp */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +295,15 @@
 			files = (
 				FA465E8D18BFB7E100B59BCC /* InfoPlist.strings in Resources */,
 				FA465E9518BFB7E100B59BCC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA71A85E18C5EE80005916EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA71A86918C5EE80005916EA /* InfoPlist.strings in Resources */,
+				FA71A87118C5EE80005916EA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +356,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA71A85C18C5EE80005916EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA71A88D18C5EF78005916EA /* ABMultitonInjector.m in Sources */,
+				FA71A86F18C5EE80005916EA /* AppDelegate.m in Sources */,
+				FA71A88B18C5EECD005916EA /* MagicObject.m in Sources */,
+				FA71A88C18C5EF5D005916EA /* ABMultiton.m in Sources */,
+				FA71A86B18C5EE80005916EA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -276,6 +375,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA465E8C18BFB7E100B59BCC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FA71A86718C5EE80005916EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA71A86818C5EE80005916EA /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -385,6 +492,38 @@
 			};
 			name = Release;
 		};
+		FA71A88418C5EE80005916EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABMultitonApp/ABMultitonApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ABMultitonApp/ABMultitonApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FA71A88518C5EE80005916EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ABMultitonApp/ABMultitonApp-Prefix.pch";
+				INFOPLIST_FILE = "ABMultitonApp/ABMultitonApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -405,6 +544,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FA71A88818C5EE80005916EA /* Build configuration list for PBXNativeTarget "ABMultitonApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA71A88418C5EE80005916EA /* Debug */,
+				FA71A88518C5EE80005916EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
