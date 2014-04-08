@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		24A46DB1965947A09D6E379B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39007D8C259A4DC9B9A0AD65 /* libPods.a */; };
+		FA065DD118F3F33200BD3CAE /* ABMultiton+SetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA065DD018F3F33200BD3CAE /* ABMultiton+SetInstance.m */; };
+		FA065DD518F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA065DD418F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm */; };
 		FA22235018C07E2E009644EE /* MagicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22234F18C07E2E009644EE /* MagicObject.m */; };
 		FA22235718C08077009644EE /* ABMultiton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22235518C08077009644EE /* ABMultiton.m */; };
 		FA22235A18C08093009644EE /* ABMultitonInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22235918C08093009644EE /* ABMultitonInjector.m */; };
@@ -34,6 +36,9 @@
 /* Begin PBXFileReference section */
 		39007D8C259A4DC9B9A0AD65 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D810A32498047E3AE2E0668 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FA065DCF18F3F33200BD3CAE /* ABMultiton+SetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ABMultiton+SetInstance.h"; path = "Subspecs/ABMultiton+SetInstance.h"; sourceTree = "<group>"; };
+		FA065DD018F3F33200BD3CAE /* ABMultiton+SetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ABMultiton+SetInstance.m"; path = "Subspecs/ABMultiton+SetInstance.m"; sourceTree = "<group>"; };
+		FA065DD418F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonSetInstanceSpec.mm; sourceTree = "<group>"; };
 		FA22234E18C07E2E009644EE /* MagicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicObject.h; sourceTree = "<group>"; };
 		FA22234F18C07E2E009644EE /* MagicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicObject.m; sourceTree = "<group>"; };
 		FA22235418C08077009644EE /* ABMultiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultiton.h; sourceTree = "<group>"; };
@@ -89,11 +94,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA065DD318F3F33A00BD3CAE /* Subspecs */ = {
+			isa = PBXGroup;
+			children = (
+				FA065DCF18F3F33200BD3CAE /* ABMultiton+SetInstance.h */,
+				FA065DD018F3F33200BD3CAE /* ABMultiton+SetInstance.m */,
+			);
+			name = Subspecs;
+			sourceTree = "<group>";
+		};
 		FA22235118C08077009644EE /* ABMultiton */ = {
 			isa = PBXGroup;
 			children = (
 				FA22235318C08077009644EE /* Public */,
 				FA22235218C08077009644EE /* Private */,
+				FA065DD318F3F33A00BD3CAE /* Subspecs */,
 			);
 			name = ABMultiton;
 			path = ../ABMultiton;
@@ -177,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				FA465EB218BFB94900B59BCC /* ABMultitonSpec.mm */,
+				FA065DD418F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -267,7 +283,7 @@
 		FA465E7718BFB7E100B59BCC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = okolodev;
 			};
 			buildConfigurationList = FA465E7A18BFB7E100B59BCC /* Build configuration list for PBXProject "ABMultitonSpec" */;
@@ -352,7 +368,9 @@
 				FA22235018C07E2E009644EE /* MagicObject.m in Sources */,
 				FA465EBC18BFDA2A00B59BCC /* SimpleObject.m in Sources */,
 				FA465EB318BFB94900B59BCC /* ABMultitonSpec.mm in Sources */,
+				FA065DD118F3F33200BD3CAE /* ABMultiton+SetInstance.m in Sources */,
 				FA22235718C08077009644EE /* ABMultiton.m in Sources */,
+				FA065DD518F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +412,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -433,7 +450,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -495,7 +511,6 @@
 		FA71A88418C5EE80005916EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -513,7 +528,6 @@
 		FA71A88518C5EE80005916EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -552,6 +566,7 @@
 				FA71A88518C5EE80005916EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

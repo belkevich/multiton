@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef id (^ABInitBlock)();
-
 @interface ABMultiton : NSObject
 
 + (id)sharedInstanceOfClass:(Class)theClass;
-+ (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(ABInitBlock)initBlock;
++ (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(id (^)())initBlock;
 + (void)removeInstanceOfClass:(Class)theClass;
 + (void)purgeRemovableInstances;
 + (BOOL)containsInstanceOfClass:(Class)theClass;

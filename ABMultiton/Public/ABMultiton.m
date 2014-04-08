@@ -13,10 +13,8 @@
 NSString * const kMultitonException = @"class doesn't conforms to protocol ABMultitonProtocol'";
 
 @interface ABMultiton ()
-{
-    NSMutableDictionary *_instances;
-    dispatch_queue_t _lock;
-}
+@property (nonatomic, readonly) NSMutableDictionary *instances;
+@property (nonatomic, readonly) dispatch_queue_t lock;
 @end
 
 @implementation ABMultiton
@@ -85,7 +83,7 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
     return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass withInitBlock:nil];
 }
 
-+ (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(ABInitBlock)initBlock
++ (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(id (^)())initBlock
 {
     return [[ABMultiton sharedInstance] sharedInstanceOfClass:theClass withInitBlock:initBlock];
 }
@@ -108,19 +106,19 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
 
 #pragma mark - private
 
-- (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(ABInitBlock)initBlock
+- (id)sharedInstanceOfClass:(Class)theClass withInitBlock:(id (^)())initBlock
 {
     NSString *className = NSStringFromClass(theClass);
     if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
     {
         __block id classInstance;
-        dispatch_sync(_lock, ^
+        dispatch_sync(self.lock, ^
         {
-            classInstance = [_instances objectForKey:className];
+            classInstance = [self.instances objectForKey:className];
             if (!classInstance)
             {
                 classInstance = initBlock ? initBlock() : [[theClass alloc] init];
-                [_instances setObject:classInstance forKey:className];
+                [self.instances setObject:classInstance forKey:className];
             }
         });
         return classInstance;
@@ -132,27 +130,27 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
 - (id)getInstanceForKey:(NSString *)key
 {
     __block id classInstance = nil;
-    dispatch_sync(_lock, ^
+    dispatch_sync(self.lock, ^
     {
-        classInstance = [_instances objectForKey:key];
+        classInstance = [self.instances objectForKey:key];
     });
     return classInstance;
 }
 
 - (void)removeInstanceOfClass:(Class)theClass
 {
-    dispatch_async(_lock, ^
+    dispatch_async(self.lock, ^
     {
         NSString *className = NSStringFromClass(theClass);
-        [_instances removeObjectForKey:className];
+        [self.instances removeObjectForKey:className];
     });
 }
 
 - (void)purgeRemovableInstances
 {
-    dispatch_async(_lock, ^
+    dispatch_async(self.lock, ^
     {
-        NSSet *keys = [_instances keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop)
+        NSSet *keys = [self.instances keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop)
         {
             if ([obj respondsToSelector:@selector(isRemovableInstance)])
             {
@@ -160,7 +158,7 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
             }
             return NO;
         }];
-        [_instances removeObjectsForKeys:[keys allObjects]];
+        [self.instances removeObjectsForKeys:[keys allObjects]];
     });
 }
 

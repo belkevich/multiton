@@ -18,16 +18,15 @@ describe(@"ABMultiton", ^
 {
     __block SimpleObject *instance;
 
-    beforeEach(^
-               {
-                   instance = SimpleObject.shared;
-               });
+    beforeEach((id)^
+    {
+        instance = SimpleObject.shared;
+    });
 
-    afterEach(^
-              {
-                  [ABMultiton removeInstanceOfClass:SimpleObject.class];
-              });
-
+    afterEach((id)^
+    {
+        [ABMultiton removeInstanceOfClass:SimpleObject.class];
+    });
 
     it(@"should create shared instance", ^
     {
@@ -51,7 +50,10 @@ describe(@"ABMultiton", ^
     it(@"should inject shared instance method if it doesn't impelented", ^
     {
         __block MagicObject *object;
-        ^{object = MagicObject.shared;} should_not raise_exception;
+        ^
+        {
+            object = MagicObject.shared;
+        } should_not raise_exception;
         object should_not be_nil;
         object should be_instance_of(MagicObject.class);
     });
@@ -86,7 +88,10 @@ describe(@"ABMultiton", ^
 
     it(@"should throw exception if class doesn't conforms ABMultitonProtocol", ^
     {
-        ^{[ABMultiton sharedInstanceOfClass:NSObject.class];} should raise_exception;
+        ^
+        {
+            [ABMultiton sharedInstanceOfClass:NSObject.class];
+        } should raise_exception;
     });
 });
 
