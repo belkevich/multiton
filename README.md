@@ -106,7 +106,7 @@ Replace `pod 'ABMultiton'` with `pod 'ABMultiton/SetInstance'`
 #### History
 
 **Version 2.0.3**
-* Added ability to set custom instance as `shared`
+* Added subspec that allow to set custom shared instance directly
 
 **Version 2.0.2**
 * Fixed critical bug with `shared` method injection
