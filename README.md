@@ -10,6 +10,7 @@ Features:
 * Remove shared instance of class when you don't need it anymore (unit-tests!). No more immortal instances!
 * Specify is shared instance should be removed on memory warning. 
 * Create shared instance with custom `init` method with arguments. 
+* Set custom instance that will return as `shared`.
 
 **Warning**
 
@@ -108,6 +109,35 @@ Using `ABMultiton` is thread safe.
 Please, don't create shared instance for class if you can. "Singleton mania" is a well known anti-pattern.
 
 ---
+
+#### Subspec
+**ABMultiton** contain subspec `SetInstance`. It's allow to replace or add instance for class that will return on `shared` method call. It can be very useful with unit-tests.
+
+###### Installation
+Replace `pod 'ABMultiton'` with `pod 'ABMultiton/SetInstance'`
+
+---
+
+###### Using
+```objective-c
+[ABMultiton setInstance:customInstance forClass:MyClass.class];
+```
+
+---
+
+#### History
+
+**Version 2.0.3**
+* Added ability to set custom instance as `shared`
+
+**Version 2.0.2**
+* Fixed critical bug with `shared` method injection
+
+**Version 2.0.0**
+* Added runtime `shared` method injection
+
+**Version 1.2.2**
+* Fixed potential bug with multithread shared instance creation
 
 #### Updates
 Stay tuned with **ABMultiton** updates at [@okolodev](https://twitter.com/okolodev)
