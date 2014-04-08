@@ -13,10 +13,7 @@ Features:
 * Set custom instance that will return as `shared`.
 
 **Warning**
-
-This is not implementation of classic [multiton](http://en.wikipedia.org/wiki/Multiton_pattern). This implementation uses instance `class name` as `key` to access instance.
-
----
+> This is not implementation of classic [multiton](http://en.wikipedia.org/wiki/Multiton_pattern). This implementation uses instance `class name` as `key` to access instance.
 
 #### Installation
 
@@ -25,11 +22,9 @@ Add to [Podfile](https://github.com/CocoaPods/CocoaPods/wiki/A-Podfile)
 pod 'ABMultiton'
 ```
 
----
-
 #### Using
 
-###### Shared instance
+##### 1. Shared instance
 Class should conforms to `ABMultitonProtocol`
 
 ```objective-c
@@ -44,9 +39,7 @@ And that's all! `ABMultiton` will add `shared` method implementation in runtime.
 [MyClass.shared myMethod];
 ```
 
----
-
-###### Shared instance with custom initilization
+##### 2. Shared instance with custom initilization
 `ABMultiton` implements `shared` method in this way
 ```objective-c
 return [[MyClass alloc] init];
@@ -67,17 +60,13 @@ And if you need to use some custom `init` method you should implement `shared` m
 }
 ```
 
----
-
-###### Remove shared instance
+##### 3. Remove shared instance
 It's very useful in unit tests. So, if you don't need shared instance you can remove it by this call:
 ```objective-c
 [ABMultiton removeInstanceOfClass:MyClass.class];
 ```
 
----
-
-###### Remove shared instance on memory warning 
+##### 4. Remove shared instance on memory warning 
 Sometimes you don't need shared instance for all app life cycle. And you may want to release some shared instances on low memory. It's pretty easy. Just implement optional method `isRemovableInstance` of `ABMultitonProtocol`
 ```objective-c
 @implementation MyClass
@@ -91,39 +80,28 @@ And this instance will be released on memory warning. Or you can release all suc
 ```objective-c
 [ABMultiton purgeRemovableInstances];
 ```
----
 
-###### Check is shared instance exists
+##### 5. Check is shared instance exists
 ```objective-c
 BOOL isExists = [ABMultiton containsInstanceOfClass:[MyClass class]];
 ```
 
----
-
-###### Thread safety
+##### 6. Thread safety
 Using `ABMultiton` is thread safe.
 
----
-
-###### Important warning
+##### 7. Important warning
 Please, don't create shared instance for class if you can. "Singleton mania" is a well known anti-pattern.
-
----
 
 #### Subspec
 **ABMultiton** contain subspec `SetInstance`. It's allow to replace or add instance for class that will return on `shared` method call. It can be very useful with unit-tests.
 
-###### Installation
+##### Installation
 Replace `pod 'ABMultiton'` with `pod 'ABMultiton/SetInstance'`
 
----
-
-###### Using
+##### Using
 ```objective-c
 [ABMultiton setInstance:customInstance forClass:MyClass.class];
 ```
-
----
 
 #### History
 
