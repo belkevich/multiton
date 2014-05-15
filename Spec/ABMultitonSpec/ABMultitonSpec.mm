@@ -9,6 +9,7 @@
 #import "ABMultiton.h"
 #import "SimpleObject.h"
 #import "MagicObject.h"
+#import "SharedObject.h"
 
 using namespace Cedar::Matchers;
 
@@ -56,6 +57,12 @@ describe(@"ABMultiton", ^
         } should_not raise_exception;
         object should_not be_nil;
         object should be_instance_of(MagicObject.class);
+    });
+
+    it(@"shouldn't inject shared instance method if it already implemented", ^
+    {
+        SharedObject *object = SharedObject.shared;
+        object.flag should equal(YES);
     });
 
     it(@"should remove shared instance", ^
