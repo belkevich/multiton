@@ -105,17 +105,21 @@ Replace `pod 'ABMultiton'` with `pod 'ABMultiton/SetInstance'`
 
 #### History
 
+**Version 2.0.4**
+* Fixed deadlock between different instances.
+Thanks to [Alessandro Zummo](https://github.com/dwery) for issue.
+
 **Version 2.0.3**
-* Added subspec that allow to set custom shared instance directly
+* Added subspec that allow to set custom shared instance directly.
 
 **Version 2.0.2**
-* Fixed critical bug with `shared` method injection
+* Fixed critical bug with `shared` method injection.
 
 **Version 2.0.0**
-* Added runtime `shared` method injection
+* Added runtime `shared` method injection.
 
 **Version 1.2.2**
-* Fixed potential bug with multithread shared instance creation
+* Fixed potential bug with multithread shared instance creation.
 
 #### Updates
 Stay tuned with **ABMultiton** updates at [@okolodev](https://twitter.com/okolodev)
