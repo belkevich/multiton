@@ -9,12 +9,13 @@
 #import "ABMultiton.h"
 #import "ABMultitonProtocol.h"
 #import "ABMultitonInjector.h"
+#import "NSOperationQueue+GCD.h"
 
 NSString * const kMultitonException = @"class doesn't conforms to protocol ABMultitonProtocol'";
 
 @interface ABMultiton ()
 @property (nonatomic, readonly) NSMutableDictionary *instances;
-@property (nonatomic, readonly) dispatch_queue_t lock;
+@property (nonatomic, readonly) NSOperationQueue *queue;
 @end
 
 @implementation ABMultiton
@@ -27,7 +28,7 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
     if (self)
     {
         _instances = [[NSMutableDictionary alloc] init];
-        _lock = dispatch_queue_create("org.okolodev.multiton_queue", NULL);
+        _queue = [NSOperationQueue serialQueue];
 #if TARGET_OS_IPHONE
         [[NSNotificationCenter defaultCenter]
                                addObserver:self selector:@selector(memoryWarningReceived:)
@@ -42,13 +43,6 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
 {
 #if TARGET_OS_IPHONE
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-#endif
-
-#if !OS_OBJECT_USE_OBJC
-    if (_lock)
-    {
-        dispatch_release(_lock);
-    }
 #endif
 }
 
@@ -112,7 +106,7 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
     if ([theClass conformsToProtocol:@protocol(ABMultitonProtocol)])
     {
         __block id classInstance;
-        dispatch_sync(self.lock, ^
+        [self.queue syncBlock:^
         {
             classInstance = [self.instances objectForKey:className];
             if (!classInstance)
@@ -120,7 +114,7 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
                 classInstance = initBlock ? initBlock() : [[theClass alloc] init];
                 [self.instances setObject:classInstance forKey:className];
             }
-        });
+        }];
         return classInstance;
     }
     NSString *reason = [NSString stringWithFormat:@"'%@' %@", className, kMultitonException];
@@ -130,25 +124,25 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
 - (id)getInstanceForKey:(NSString *)key
 {
     __block id classInstance = nil;
-    dispatch_sync(self.lock, ^
+    [self.queue syncBlock:^
     {
         classInstance = [self.instances objectForKey:key];
-    });
+    }];
     return classInstance;
 }
 
 - (void)removeInstanceOfClass:(Class)theClass
 {
-    dispatch_async(self.lock, ^
+    [self.queue asyncBlock:^
     {
         NSString *className = NSStringFromClass(theClass);
         [self.instances removeObjectForKey:className];
-    });
+    }];
 }
 
 - (void)purgeRemovableInstances
 {
-    dispatch_async(self.lock, ^
+    [self.queue asyncBlock:^
     {
         NSSet *keys = [self.instances keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop)
         {
@@ -159,7 +153,7 @@ NSString * const kMultitonException = @"class doesn't conforms to protocol ABMul
             return NO;
         }];
         [self.instances removeObjectsForKeys:[keys allObjects]];
-    });
+    }];
 }
 
 #if TARGET_OS_IPHONE

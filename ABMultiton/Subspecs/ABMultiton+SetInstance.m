@@ -7,10 +7,11 @@
 //
 
 #import "ABMultiton+SetInstance.h"
+#import "NSOperationQueue+GCD.h"
 
 @interface ABMultiton ()
 @property (nonatomic, readonly) NSMutableDictionary *instances;
-@property (nonatomic, readonly) dispatch_queue_t lock;
+@property (nonatomic, readonly) NSOperationQueue *queue;
 + (instancetype)sharedInstance;
 @end
 
@@ -28,10 +29,10 @@
 - (void)setInstance:(id)instance forClass:(Class)theClass
 {
     NSString *className = NSStringFromClass(theClass);
-    dispatch_async(self.lock, ^
+    [self.queue asyncBlock:^
     {
         [self.instances setObject:instance forKey:className];
-    });
+    }];
 }
 
 @end
