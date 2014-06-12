@@ -5,7 +5,6 @@ before_install:
         - sudo gem install cocoapods
         - sudo gem install ios_ci
         - brew install ios-sim
-        - brew upgrade ios-sim
         - cd Spec
         - pod 
 
