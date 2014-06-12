@@ -6,6 +6,7 @@ before_install:
         - sudo gem install ios_ci
         - brew install ios-sim
         - cd Spec
-        - pod 
+        - pod install
+        - pod update
 
 script: ios_ci cedar --source-root $TRAVIS_BUILD_DIR/Spec --workspace ABMultitonSpec.xcworkspace --scheme ABMultitonSpec --build-path Build/Products
