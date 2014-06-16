@@ -63,6 +63,10 @@ And if you need to use some custom `init` method you should implement `shared` m
 ##### 3. Remove shared instance
 It's very useful in unit tests. So, if you don't need shared instance you can remove it by this call:
 ```objective-c
+[MyClass removeShared];
+```
+This method is also injected by `ABMultiton` in runtime. Here is method implementation:
+```objective-c
 [ABMultiton removeInstanceOfClass:MyClass.class];
 ```
 
@@ -104,6 +108,10 @@ Replace `pod 'ABMultiton'` with `pod 'ABMultiton/SetInstance'`
 ```
 
 #### History
+
+**Version 2.0.5**
+* Refactored multithreading routine to GCD
+* Added `removeShared` method injection for all classes which support `ABMultitonProtocol`
 
 **Version 2.0.4**
 * Fixed deadlock between different instances.
