@@ -19,11 +19,6 @@ describe(@"ABMultiton", ^
 {
     __block SimpleObject *instance;
 
-    beforeEach((id)^
-    {
-        instance = SimpleObject.shared;
-    });
-
     afterEach((id)^
     {
         [ABMultiton removeInstanceOfClass:SimpleObject.class];
@@ -33,13 +28,13 @@ describe(@"ABMultiton", ^
 
     it(@"should create shared instance", ^
     {
+        instance = SimpleObject.shared;
         instance should_not be_nil;
         instance should be_instance_of(SimpleObject.class);
     });
 
     it(@"should create shared instance with custom initialization block", ^
     {
-        [ABMultiton removeInstanceOfClass:SimpleObject.class];
         [ABMultiton sharedInstanceOfClass:SimpleObject.class withInitBlock:^id
         {
             SimpleObject *object = [[SimpleObject alloc] init];
@@ -69,18 +64,31 @@ describe(@"ABMultiton", ^
 
     it(@"should remove shared instance", ^
     {
+        instance = SimpleObject.shared;
         [ABMultiton removeInstanceOfClass:instance.class];
+        [ABMultiton containsInstanceOfClass:SimpleObject.class] should equal(NO);
+    });
+
+    it(@"should remove shared instance from class method", ^
+    {
+        instance = SimpleObject.shared;
+        ^
+        {
+            [SimpleObject removeShared];
+        } should_not raise_exception;
         [ABMultiton containsInstanceOfClass:SimpleObject.class] should equal(NO);
     });
 
     it(@"should not purge shared instance if it isn't removable", ^
     {
+        instance = SimpleObject.shared;
         [ABMultiton purgeRemovableInstances];
         [ABMultiton containsInstanceOfClass:SimpleObject.class] should_not equal(NO);
     });
 
     it(@"should purge shared instance if it is removable", ^
     {
+        instance = SimpleObject.shared;
         instance.shouldRemove = YES;
         [ABMultiton purgeRemovableInstances];
         [ABMultiton containsInstanceOfClass:SimpleObject.class] should equal(NO);
@@ -88,6 +96,7 @@ describe(@"ABMultiton", ^
 
     it(@"should purge removable items on memory warning", ^
     {
+        instance = SimpleObject.shared;
         instance.shouldRemove = YES;
         [[NSNotificationCenter defaultCenter]
                                postNotificationName:UIApplicationDidReceiveMemoryWarningNotification

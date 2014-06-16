@@ -18,7 +18,14 @@ id multitonInstance(id self, __unused SEL _cmd)
     return [ABMultiton sharedInstanceOfClass:[self class]];
 }
 
+void removeMultitonInstance(id self, __unused SEL _cmd)
+{
+    [ABMultiton removeInstanceOfClass:[self class]];
+}
+
 @implementation ABMultitonInjector
+
+#pragma mark - public
 
 + (void)injectMultitonProtocolMethods
 {
@@ -28,28 +35,39 @@ id multitonInstance(id self, __unused SEL _cmd)
     {
         Protocol *multitonProtocol = @protocol(ABMultitonProtocol);
         SEL multitonMethod = @selector(shared);
+        SEL removeMethod = @selector(removeShared);
         for (unsigned int i = 0; i < count; i++)
         {
             Class currentClass = classesArray[i];
             if (class_conformsToProtocol(currentClass, multitonProtocol))
             {
-                Class metaClass = object_getClass(currentClass);
-                if (!class_respondsToSelector(metaClass, multitonMethod))
-                {
-                    if (!class_addMethod(metaClass, multitonMethod, (IMP)multitonInstance, "@@:"))
-                    {
-                        NSString *methodName = NSStringFromSelector(multitonMethod);
-                        NSString *className = NSStringFromClass(currentClass);
-                        NSString *format = @"Can't add method '%@' to class '%@'";
-                        NSString *reason = [NSString stringWithFormat:format, methodName,
-                                                     className];
-                        @throw [NSException exceptionWithName:kMultitonInjectionException
-                                                       reason:reason userInfo:nil];
-                    }
-                }
+                [self addMethod:multitonMethod implementation:(IMP)multitonInstance
+                        toClass:currentClass];
+                [self addMethod:removeMethod implementation:(IMP)removeMultitonInstance
+                        toClass:currentClass];
             }
         }
         free(classesArray);
+    }
+}
+
+#pragma mark - private
+
++ (void)addMethod:(SEL)method implementation:(IMP)implementation toClass:(Class)theClass
+{
+    Class metaClass = object_getClass(theClass);
+    if (!class_respondsToSelector(metaClass, method))
+    {
+        if (!class_addMethod(metaClass, method, implementation, "@@:"))
+        {
+            NSString *methodName = NSStringFromSelector(method);
+            NSString *className = NSStringFromClass(theClass);
+            NSString *format = @"Can't add method '%@' to class '%@'";
+            NSString *reason = [NSString stringWithFormat:format, methodName,
+                                                          className];
+            @throw [NSException exceptionWithName:kMultitonInjectionException
+                                           reason:reason userInfo:nil];
+        }
     }
 }
 

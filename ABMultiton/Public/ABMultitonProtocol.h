@@ -12,6 +12,7 @@
 
 @optional
 + (instancetype)shared;
++ (void)removeShared;
 - (BOOL)isRemovableInstance;
 
 @end
