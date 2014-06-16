@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		24A46DB1965947A09D6E379B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39007D8C259A4DC9B9A0AD65 /* libPods.a */; };
-		2DBA1F68E52EBEFA09899A84 /* NSOperationQueue+GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8880192CDBED0085FBE3 /* NSOperationQueue+GCD.m */; };
 		FA065DD118F3F33200BD3CAE /* ABMultiton+SetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA065DD018F3F33200BD3CAE /* ABMultiton+SetInstance.m */; };
 		FA065DD518F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA065DD418F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm */; };
 		FA22235018C07E2E009644EE /* MagicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22234F18C07E2E009644EE /* MagicObject.m */; };
@@ -34,7 +33,10 @@
 		FA71A88D18C5EF78005916EA /* ABMultitonInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22235918C08093009644EE /* ABMultitonInjector.m */; };
 		FAAA887B192CD3D80085FBE3 /* ABMultitonDeadlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAAA887A192CD3D80085FBE3 /* ABMultitonDeadlockSpec.mm */; };
 		FAAA887E192CD4020085FBE3 /* DeadlockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA887D192CD4020085FBE3 /* DeadlockObject.m */; };
-		FAAA8881192CDBED0085FBE3 /* NSOperationQueue+GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8880192CDBED0085FBE3 /* NSOperationQueue+GCD.m */; };
+		FAACF07C194F0EA700122171 /* dispatch_safe.m in Sources */ = {isa = PBXBuildFile; fileRef = FAACF07B194F0EA700122171 /* dispatch_safe.m */; };
+		FAACF07D194F0EA700122171 /* dispatch_safe.m in Sources */ = {isa = PBXBuildFile; fileRef = FAACF07B194F0EA700122171 /* dispatch_safe.m */; };
+		FAACF07F194F154900122171 /* ABMultitonConcurrencySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAACF07E194F154900122171 /* ABMultitonConcurrencySpec.mm */; };
+		FAACF080194F154900122171 /* ABMultitonConcurrencySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAACF07E194F154900122171 /* ABMultitonConcurrencySpec.mm */; };
 		FAB26E9D19254FD000086E1B /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB26E9C19254FD000086E1B /* SharedObject.m */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +77,9 @@
 		FAAA887A192CD3D80085FBE3 /* ABMultitonDeadlockSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonDeadlockSpec.mm; sourceTree = "<group>"; };
 		FAAA887C192CD4020085FBE3 /* DeadlockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlockObject.h; sourceTree = "<group>"; };
 		FAAA887D192CD4020085FBE3 /* DeadlockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlockObject.m; sourceTree = "<group>"; };
-		FAAA887F192CDBED0085FBE3 /* NSOperationQueue+GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+GCD.h"; sourceTree = "<group>"; };
-		FAAA8880192CDBED0085FBE3 /* NSOperationQueue+GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+GCD.m"; sourceTree = "<group>"; };
+		FAACF07A194F0E7900122171 /* dispatch_safe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dispatch_safe.h; sourceTree = "<group>"; };
+		FAACF07B194F0EA700122171 /* dispatch_safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dispatch_safe.m; sourceTree = "<group>"; };
+		FAACF07E194F154900122171 /* ABMultitonConcurrencySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonConcurrencySpec.mm; sourceTree = "<group>"; };
 		FAB26E9B19254FD000086E1B /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
 		FAB26E9C19254FD000086E1B /* SharedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +134,8 @@
 			children = (
 				FA22235818C08093009644EE /* ABMultitonInjector.h */,
 				FA22235918C08093009644EE /* ABMultitonInjector.m */,
-				FAAA887F192CDBED0085FBE3 /* NSOperationQueue+GCD.h */,
-				FAAA8880192CDBED0085FBE3 /* NSOperationQueue+GCD.m */,
+				FAACF07A194F0E7900122171 /* dispatch_safe.h */,
+				FAACF07B194F0EA700122171 /* dispatch_safe.m */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				FA465EB218BFB94900B59BCC /* ABMultitonSpec.mm */,
 				FA065DD418F3F62E00BD3CAE /* ABMultitonSetInstanceSpec.mm */,
 				FAAA887A192CD3D80085FBE3 /* ABMultitonDeadlockSpec.mm */,
+				FAACF07E194F154900122171 /* ABMultitonConcurrencySpec.mm */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -385,11 +389,12 @@
 				FA22235A18C08093009644EE /* ABMultitonInjector.m in Sources */,
 				FAAA887E192CD4020085FBE3 /* DeadlockObject.m in Sources */,
 				FA465E8F18BFB7E100B59BCC /* main.m in Sources */,
+				FAACF07C194F0EA700122171 /* dispatch_safe.m in Sources */,
 				FA22235018C07E2E009644EE /* MagicObject.m in Sources */,
 				FA465EBC18BFDA2A00B59BCC /* SimpleObject.m in Sources */,
-				FAAA8881192CDBED0085FBE3 /* NSOperationQueue+GCD.m in Sources */,
 				FAAA887B192CD3D80085FBE3 /* ABMultitonDeadlockSpec.mm in Sources */,
 				FA465EB318BFB94900B59BCC /* ABMultitonSpec.mm in Sources */,
+				FAACF07F194F154900122171 /* ABMultitonConcurrencySpec.mm in Sources */,
 				FA065DD118F3F33200BD3CAE /* ABMultiton+SetInstance.m in Sources */,
 				FA22235718C08077009644EE /* ABMultiton.m in Sources */,
 				FAB26E9D19254FD000086E1B /* SharedObject.m in Sources */,
@@ -404,9 +409,10 @@
 				FA71A88D18C5EF78005916EA /* ABMultitonInjector.m in Sources */,
 				FA71A86F18C5EE80005916EA /* AppDelegate.m in Sources */,
 				FA71A88B18C5EECD005916EA /* MagicObject.m in Sources */,
+				FAACF07D194F0EA700122171 /* dispatch_safe.m in Sources */,
 				FA71A88C18C5EF5D005916EA /* ABMultiton.m in Sources */,
 				FA71A86B18C5EE80005916EA /* main.m in Sources */,
-				2DBA1F68E52EBEFA09899A84 /* NSOperationQueue+GCD.m in Sources */,
+				FAACF080194F154900122171 /* ABMultitonConcurrencySpec.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

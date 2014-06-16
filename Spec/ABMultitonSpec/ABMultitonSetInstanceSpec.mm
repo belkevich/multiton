@@ -20,6 +20,7 @@ describe(@"ABMultiton", ^
 
     beforeEach((id)^
     {
+        [ABMultiton removeInstanceOfClass:SimpleObject.class];
         instance = SimpleObject.shared;
     });
 

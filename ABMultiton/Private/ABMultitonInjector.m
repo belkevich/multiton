@@ -13,7 +13,7 @@
 
 NSString *const kMultitonInjectionException = @"Can't dynamically add method";
 
-id multitonInstance(id self, SEL _cmd)
+id multitonInstance(id self, __unused SEL _cmd)
 {
     return [ABMultiton sharedInstanceOfClass:[self class]];
 }

@@ -27,6 +27,8 @@ describe(@"ABMultiton", ^
     afterEach((id)^
     {
         [ABMultiton removeInstanceOfClass:SimpleObject.class];
+        [ABMultiton removeInstanceOfClass:MagicObject.class];
+        [ABMultiton removeInstanceOfClass:SharedObject.class];
     });
 
     it(@"should create shared instance", ^

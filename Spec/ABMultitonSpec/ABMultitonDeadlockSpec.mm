@@ -19,6 +19,7 @@ describe(@"ABMultiton", ^
     beforeEach((id)^
     {
         [ABMultiton removeInstanceOfClass:SimpleObject.class];
+        [ABMultiton removeInstanceOfClass:DeadlockObject.class];
     });
 
     afterEach((id)^
