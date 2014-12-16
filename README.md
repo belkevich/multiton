@@ -1,15 +1,15 @@
-Multiton
+Multiton 2.0.6
 ========
 
 [![Build Status](https://travis-ci.org/belkevich/multiton.png?branch=master)](https://travis-ci.org/belkevich/multiton)
 
-Multiton is a better alternative to singleton. It's more flexible and require less code lines to implement. 
+Multiton is a better alternative to singleton. It's more flexible and require less code lines to implement.
 
 Features:
 * Make shared instance of class just by including `ABMultitonProtocol` to class interface. No implementation needed!
 * Remove shared instance of class when you don't need it anymore (unit-tests!). No more immortal instances!
-* Specify is shared instance should be removed on memory warning. 
-* Create shared instance with custom `init` method with arguments. 
+* Specify is shared instance should be removed on memory warning.
+* Create shared instance with custom `init` method with arguments.
 * Set custom instance that will return as `shared`.
 
 **Warning**
@@ -70,7 +70,7 @@ This method is also injected by `ABMultiton` in runtime. Here is method implemen
 [ABMultiton removeInstanceOfClass:MyClass.class];
 ```
 
-##### 4. Remove shared instance on memory warning 
+##### 4. Remove shared instance on memory warning
 Sometimes you don't need shared instance for all app life cycle. And you may want to release some shared instances on low memory. It's pretty easy. Just implement optional method `isRemovableInstance` of `ABMultitonProtocol`
 ```objective-c
 @implementation MyClass
@@ -109,25 +109,7 @@ Replace `pod 'ABMultiton'` with `pod 'ABMultiton/SetInstance'`
 
 #### History
 
-**Version 2.0.5**
-* Refactored multithreading routine to GCD
-* Added `removeShared` method injection for all classes which support `ABMultitonProtocol`
-
-**Version 2.0.4**
-* Fixed deadlock between different instances.
-Thanks to [Alessandro Zummo](https://github.com/dwery) for issue.
-
-**Version 2.0.3**
-* Added subspec that allow to set custom shared instance directly.
-
-**Version 2.0.2**
-* Fixed critical bug with `shared` method injection.
-
-**Version 2.0.0**
-* Added runtime `shared` method injection.
-
-**Version 1.2.2**
-* Fixed potential bug with multithread shared instance creation.
+[Releases](https://github.com/belkevich/multiton/releases)
 
 #### Updates
 Stay tuned with **ABMultiton** updates at [@okolodev](https://twitter.com/okolodev)
