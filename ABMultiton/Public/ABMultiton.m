@@ -70,7 +70,6 @@ static const int kMultitonQueueKey = 1;
 
 + (void)load
 {
-    [super load];
     @autoreleasepool
     {
         [ABMultitonInjector injectMultitonProtocolMethods];
