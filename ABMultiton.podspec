@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "ABMultiton"
-  s.version               = "2.0.5"
+  s.version               = "2.0.6"
   s.summary               = "Multiton is a better alternative to singleton."
   s.homepage              = "https://github.com/belkevich/multiton"
   s.social_media_url      = 'https://twitter.com/okolodev'
