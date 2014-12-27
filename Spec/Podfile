@@ -1,2 +1,5 @@
-platform :ios, '5.0'
-  pod 'CedarAsync'
+platform :ios, '6.0'
+  
+  target :ABMultitonSpec do
+    pod 'CedarAsync'
+  end

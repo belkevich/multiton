@@ -3,9 +3,7 @@ language: objective-c
 before_install:
         - sudo gem update --system
         - sudo gem install cocoapods
-        - sudo gem install ios_ci
-        - brew install ios-sim
         - cd Spec
         - pod install
 
-script: ios_ci cedar --source-root $TRAVIS_BUILD_DIR/Spec --workspace ABMultitonSpec.xcworkspace --scheme ABMultitonSpec --build-path Build/Products
+script: xcodebuild test -workspace ABMultiton.xcworkspace -scheme ABMultiton -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
