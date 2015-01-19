@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ABMultitonProtocol <NSObject>
+@protocol ABMultitonProtocol
 
 @optional
 + (instancetype)shared;

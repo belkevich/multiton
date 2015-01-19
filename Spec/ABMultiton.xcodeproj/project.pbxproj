@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		298D1D4CA69333DC56B348DA /* libPods-ABMultitonSpec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CD4674A2E16AA88EC6B912 /* libPods-ABMultitonSpec.a */; };
+		9AFC969D1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC969C1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm */; };
+		9AFC96A11A6BDF28008A295D /* SwiftSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC96A01A6BDF28008A295D /* SwiftSingleton.swift */; };
 		FA27A30B1A4EDAED00D709AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A30A1A4EDAED00D709AE /* main.m */; };
 		FA27A30E1A4EDAED00D709AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A30D1A4EDAED00D709AE /* AppDelegate.m */; };
 		FA27A3111A4EDAED00D709AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3101A4EDAED00D709AE /* ViewController.m */; };
@@ -42,6 +44,9 @@
 /* Begin PBXFileReference section */
 		61CD4674A2E16AA88EC6B912 /* libPods-ABMultitonSpec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ABMultitonSpec.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		707D9FDD0D559D72765F7A87 /* Pods-ABMultitonSpec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABMultitonSpec.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec.release.xcconfig"; sourceTree = "<group>"; };
+		9AFC969C1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonSwiftSpec.mm; sourceTree = "<group>"; };
+		9AFC969F1A6BDF27008A295D /* ABMultitonSpec-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABMultitonSpec-Bridging-Header.h"; sourceTree = "<group>"; };
+		9AFC96A01A6BDF28008A295D /* SwiftSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftSingleton.swift; path = Mocks/SwiftSingleton.swift; sourceTree = "<group>"; };
 		FA27A3051A4EDAED00D709AE /* ABMultiton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABMultiton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA27A3091A4EDAED00D709AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA27A30A1A4EDAED00D709AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9AFC969E1A6BDF03008A295D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9AFC96A01A6BDF28008A295D /* SwiftSingleton.swift */,
+				9AFC969F1A6BDF27008A295D /* ABMultitonSpec-Bridging-Header.h */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
 		BE6F47C5A712BEB0F4CE2223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +205,7 @@
 		FA27A3471A4EDC2200D709AE /* ABMultitonSpec */ = {
 			isa = PBXGroup;
 			children = (
+				9AFC969E1A6BDF03008A295D /* Mocks */,
 				FA27A35B1A4EDD6200D709AE /* Spec */,
 				FA27A3481A4EDC2200D709AE /* Supporting Files */,
 			);
@@ -214,6 +229,7 @@
 				FA27A3541A4EDD5A00D709AE /* ABMultitonDeadlockSpec.mm */,
 				FA27A3551A4EDD5A00D709AE /* ABMultitonSetInstanceSpec.mm */,
 				FA27A3561A4EDD5A00D709AE /* ABMultitonSpec.mm */,
+				9AFC969C1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm */,
 			);
 			name = Spec;
 			sourceTree = "<group>";
@@ -428,10 +444,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA27A35A1A4EDD5A00D709AE /* ABMultitonSpec.mm in Sources */,
+				9AFC969D1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm in Sources */,
 				FA27A3521A4EDD1A00D709AE /* ABMultitonTestMock.m in Sources */,
 				FA27A3581A4EDD5A00D709AE /* ABMultitonDeadlockSpec.mm in Sources */,
 				FA27A3571A4EDD5A00D709AE /* ABMultitonConcurrencySpec.mm in Sources */,
 				FA27A3591A4EDD5A00D709AE /* ABMultitonSetInstanceSpec.mm in Sources */,
+				9AFC96A11A6BDF28008A295D /* SwiftSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +594,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -588,6 +607,8 @@
 				INFOPLIST_FILE = ABMultitonSpec/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ABMultitonSpec/ABMultitonSpec-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ABMultiton.app/ABMultiton";
 			};
 			name = Debug;
@@ -599,6 +620,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -607,6 +629,7 @@
 				INFOPLIST_FILE = ABMultitonSpec/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ABMultitonSpec/ABMultitonSpec-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ABMultiton.app/ABMultiton";
 			};
 			name = Release;
