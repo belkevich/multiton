@@ -1,4 +1,4 @@
-Multiton 2.0.6
+Multiton 2.0.7
 ========
 
 [![Build Status](https://travis-ci.org/belkevich/multiton.png?branch=master)](https://travis-ci.org/belkevich/multiton)
