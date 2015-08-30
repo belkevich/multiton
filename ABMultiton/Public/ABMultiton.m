@@ -32,7 +32,7 @@ static const int kMultitonQueueKey = 1;
         _instances = [[NSMutableDictionary alloc] init];
         _concurrentQueue = [self createDispatchQueueWithConcurrency:YES];
         _serialQueue = [self createDispatchQueueWithConcurrency:NO];
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
         [[NSNotificationCenter defaultCenter]
                                addObserver:self selector:@selector(memoryWarningReceived:)
                                       name:UIApplicationDidReceiveMemoryWarningNotification
@@ -44,7 +44,7 @@ static const int kMultitonQueueKey = 1;
 
 - (void)dealloc
 {
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 #endif
 #if !OS_OBJECT_USE_OBJC
@@ -168,7 +168,7 @@ static const int kMultitonQueueKey = 1;
     });
 }
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IOS
 - (void)memoryWarningReceived:(NSNotification *)notification
 {
     [self purgeRemovableInstances];
