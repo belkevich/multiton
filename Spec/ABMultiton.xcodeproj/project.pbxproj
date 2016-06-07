@@ -1,670 +1,1626 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		298D1D4CA69333DC56B348DA /* libPods-ABMultitonSpec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CD4674A2E16AA88EC6B912 /* libPods-ABMultitonSpec.a */; };
-		9AFC969D1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC969C1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm */; };
-		9AFC96A11A6BDF28008A295D /* SwiftSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFC96A01A6BDF28008A295D /* SwiftSingleton.swift */; };
-		FA27A30B1A4EDAED00D709AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A30A1A4EDAED00D709AE /* main.m */; };
-		FA27A30E1A4EDAED00D709AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A30D1A4EDAED00D709AE /* AppDelegate.m */; };
-		FA27A3111A4EDAED00D709AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3101A4EDAED00D709AE /* ViewController.m */; };
-		FA27A3141A4EDAED00D709AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA27A3121A4EDAED00D709AE /* Main.storyboard */; };
-		FA27A3161A4EDAED00D709AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA27A3151A4EDAED00D709AE /* Images.xcassets */; };
-		FA27A3191A4EDAED00D709AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA27A3171A4EDAED00D709AE /* LaunchScreen.xib */; };
-		FA27A3521A4EDD1A00D709AE /* ABMultitonTestMock.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3511A4EDD1A00D709AE /* ABMultitonTestMock.m */; };
-		FA27A3571A4EDD5A00D709AE /* ABMultitonConcurrencySpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3531A4EDD5A00D709AE /* ABMultitonConcurrencySpec.mm */; };
-		FA27A3581A4EDD5A00D709AE /* ABMultitonDeadlockSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3541A4EDD5A00D709AE /* ABMultitonDeadlockSpec.mm */; };
-		FA27A3591A4EDD5A00D709AE /* ABMultitonSetInstanceSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3551A4EDD5A00D709AE /* ABMultitonSetInstanceSpec.mm */; };
-		FA27A35A1A4EDD5A00D709AE /* ABMultitonSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3561A4EDD5A00D709AE /* ABMultitonSpec.mm */; };
-		FA27A3661A4EDDFA00D709AE /* DeadlockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A35F1A4EDDFA00D709AE /* DeadlockObject.m */; };
-		FA27A3671A4EDDFA00D709AE /* MagicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3611A4EDDFA00D709AE /* MagicObject.m */; };
-		FA27A3681A4EDDFA00D709AE /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3631A4EDDFA00D709AE /* SharedObject.m */; };
-		FA27A3691A4EDDFA00D709AE /* SimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3651A4EDDFA00D709AE /* SimpleObject.m */; };
-		FA27A3781A4EE08C00D709AE /* ABMultitonInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A36E1A4EE08C00D709AE /* ABMultitonInjector.m */; };
-		FA27A3791A4EE08C00D709AE /* dispatch_safe.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3701A4EE08C00D709AE /* dispatch_safe.m */; };
-		FA27A37A1A4EE08C00D709AE /* ABMultiton.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3731A4EE08C00D709AE /* ABMultiton.m */; };
-		FA27A37B1A4EE08C00D709AE /* ABMultiton+SetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27A3771A4EE08C00D709AE /* ABMultiton+SetInstance.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FA27A34C1A4EDC2200D709AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA27A2FD1A4EDAED00D709AE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA27A3041A4EDAED00D709AE;
-			remoteInfo = ABMultiton;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		61CD4674A2E16AA88EC6B912 /* libPods-ABMultitonSpec.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ABMultitonSpec.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		707D9FDD0D559D72765F7A87 /* Pods-ABMultitonSpec.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABMultitonSpec.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec.release.xcconfig"; sourceTree = "<group>"; };
-		9AFC969C1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonSwiftSpec.mm; sourceTree = "<group>"; };
-		9AFC969F1A6BDF27008A295D /* ABMultitonSpec-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABMultitonSpec-Bridging-Header.h"; sourceTree = "<group>"; };
-		9AFC96A01A6BDF28008A295D /* SwiftSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftSingleton.swift; path = Mocks/SwiftSingleton.swift; sourceTree = "<group>"; };
-		FA27A3051A4EDAED00D709AE /* ABMultiton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABMultiton.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA27A3091A4EDAED00D709AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA27A30A1A4EDAED00D709AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FA27A30C1A4EDAED00D709AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FA27A30D1A4EDAED00D709AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FA27A30F1A4EDAED00D709AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FA27A3101A4EDAED00D709AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FA27A3131A4EDAED00D709AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA27A3151A4EDAED00D709AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FA27A3181A4EDAED00D709AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FA27A3461A4EDC2200D709AE /* ABMultitonSpec.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ABMultitonSpec.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA27A3491A4EDC2200D709AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA27A3511A4EDD1A00D709AE /* ABMultitonTestMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMultitonTestMock.m; sourceTree = "<group>"; };
-		FA27A3531A4EDD5A00D709AE /* ABMultitonConcurrencySpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonConcurrencySpec.mm; sourceTree = "<group>"; };
-		FA27A3541A4EDD5A00D709AE /* ABMultitonDeadlockSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonDeadlockSpec.mm; sourceTree = "<group>"; };
-		FA27A3551A4EDD5A00D709AE /* ABMultitonSetInstanceSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonSetInstanceSpec.mm; sourceTree = "<group>"; };
-		FA27A3561A4EDD5A00D709AE /* ABMultitonSpec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ABMultitonSpec.mm; sourceTree = "<group>"; };
-		FA27A35C1A4EDD7700D709AE /* ABMultitonSpec-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABMultitonSpec-Prefix.pch"; sourceTree = "<group>"; };
-		FA27A35E1A4EDDFA00D709AE /* DeadlockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeadlockObject.h; sourceTree = "<group>"; };
-		FA27A35F1A4EDDFA00D709AE /* DeadlockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeadlockObject.m; sourceTree = "<group>"; };
-		FA27A3601A4EDDFA00D709AE /* MagicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicObject.h; sourceTree = "<group>"; };
-		FA27A3611A4EDDFA00D709AE /* MagicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicObject.m; sourceTree = "<group>"; };
-		FA27A3621A4EDDFA00D709AE /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
-		FA27A3631A4EDDFA00D709AE /* SharedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedObject.m; sourceTree = "<group>"; };
-		FA27A3641A4EDDFA00D709AE /* SimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleObject.h; sourceTree = "<group>"; };
-		FA27A3651A4EDDFA00D709AE /* SimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleObject.m; sourceTree = "<group>"; };
-		FA27A36A1A4EDF8E00D709AE /* ABMultiton-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABMultiton-Prefix.pch"; sourceTree = "<group>"; };
-		FA27A36D1A4EE08C00D709AE /* ABMultitonInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultitonInjector.h; sourceTree = "<group>"; };
-		FA27A36E1A4EE08C00D709AE /* ABMultitonInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMultitonInjector.m; sourceTree = "<group>"; };
-		FA27A36F1A4EE08C00D709AE /* dispatch_safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dispatch_safe.h; sourceTree = "<group>"; };
-		FA27A3701A4EE08C00D709AE /* dispatch_safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dispatch_safe.m; sourceTree = "<group>"; };
-		FA27A3721A4EE08C00D709AE /* ABMultiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultiton.h; sourceTree = "<group>"; };
-		FA27A3731A4EE08C00D709AE /* ABMultiton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABMultiton.m; sourceTree = "<group>"; };
-		FA27A3741A4EE08C00D709AE /* ABMultitonProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABMultitonProtocol.h; sourceTree = "<group>"; };
-		FA27A3761A4EE08C00D709AE /* ABMultiton+SetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ABMultiton+SetInstance.h"; sourceTree = "<group>"; };
-		FA27A3771A4EE08C00D709AE /* ABMultiton+SetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ABMultiton+SetInstance.m"; sourceTree = "<group>"; };
-		FDC305836E1D60DDF755D3A5 /* Pods-ABMultitonSpec.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABMultitonSpec.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec.debug.xcconfig"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		FA27A3021A4EDAED00D709AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA27A3431A4EDC2200D709AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				298D1D4CA69333DC56B348DA /* libPods-ABMultitonSpec.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		9AFC969E1A6BDF03008A295D /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				9AFC96A01A6BDF28008A295D /* SwiftSingleton.swift */,
-				9AFC969F1A6BDF27008A295D /* ABMultitonSpec-Bridging-Header.h */,
-			);
-			name = Mocks;
-			sourceTree = "<group>";
-		};
-		BE6F47C5A712BEB0F4CE2223 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				61CD4674A2E16AA88EC6B912 /* libPods-ABMultitonSpec.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E6956353F156B2A45967399E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FDC305836E1D60DDF755D3A5 /* Pods-ABMultitonSpec.debug.xcconfig */,
-				707D9FDD0D559D72765F7A87 /* Pods-ABMultitonSpec.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		FA27A2FC1A4EDAED00D709AE = {
-			isa = PBXGroup;
-			children = (
-				FA27A36B1A4EE08C00D709AE /* Pod */,
-				FA27A3071A4EDAED00D709AE /* ABMultiton */,
-				FA27A3471A4EDC2200D709AE /* ABMultitonSpec */,
-				FA27A3061A4EDAED00D709AE /* Products */,
-				E6956353F156B2A45967399E /* Pods */,
-				BE6F47C5A712BEB0F4CE2223 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		FA27A3061A4EDAED00D709AE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A3051A4EDAED00D709AE /* ABMultiton.app */,
-				FA27A3461A4EDC2200D709AE /* ABMultitonSpec.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FA27A3071A4EDAED00D709AE /* ABMultiton */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A35D1A4EDDBF00D709AE /* Models */,
-				FA27A32F1A4EDB9000D709AE /* Controllers */,
-				FA27A32E1A4EDB8800D709AE /* AppDelegate */,
-				FA27A3301A4EDB9B00D709AE /* Resources */,
-				FA27A3081A4EDAED00D709AE /* Supporting Files */,
-			);
-			path = ABMultiton;
-			sourceTree = "<group>";
-		};
-		FA27A3081A4EDAED00D709AE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A3091A4EDAED00D709AE /* Info.plist */,
-				FA27A30A1A4EDAED00D709AE /* main.m */,
-				FA27A36A1A4EDF8E00D709AE /* ABMultiton-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FA27A32E1A4EDB8800D709AE /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A30C1A4EDAED00D709AE /* AppDelegate.h */,
-				FA27A30D1A4EDAED00D709AE /* AppDelegate.m */,
-			);
-			name = AppDelegate;
-			sourceTree = "<group>";
-		};
-		FA27A32F1A4EDB9000D709AE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A30F1A4EDAED00D709AE /* ViewController.h */,
-				FA27A3101A4EDAED00D709AE /* ViewController.m */,
-				FA27A3121A4EDAED00D709AE /* Main.storyboard */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		FA27A3301A4EDB9B00D709AE /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A3151A4EDAED00D709AE /* Images.xcassets */,
-				FA27A3171A4EDAED00D709AE /* LaunchScreen.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		FA27A3471A4EDC2200D709AE /* ABMultitonSpec */ = {
-			isa = PBXGroup;
-			children = (
-				9AFC969E1A6BDF03008A295D /* Mocks */,
-				FA27A35B1A4EDD6200D709AE /* Spec */,
-				FA27A3481A4EDC2200D709AE /* Supporting Files */,
-			);
-			path = ABMultitonSpec;
-			sourceTree = "<group>";
-		};
-		FA27A3481A4EDC2200D709AE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A3491A4EDC2200D709AE /* Info.plist */,
-				FA27A3511A4EDD1A00D709AE /* ABMultitonTestMock.m */,
-				FA27A35C1A4EDD7700D709AE /* ABMultitonSpec-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FA27A35B1A4EDD6200D709AE /* Spec */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A3531A4EDD5A00D709AE /* ABMultitonConcurrencySpec.mm */,
-				FA27A3541A4EDD5A00D709AE /* ABMultitonDeadlockSpec.mm */,
-				FA27A3551A4EDD5A00D709AE /* ABMultitonSetInstanceSpec.mm */,
-				FA27A3561A4EDD5A00D709AE /* ABMultitonSpec.mm */,
-				9AFC969C1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm */,
-			);
-			name = Spec;
-			sourceTree = "<group>";
-		};
-		FA27A35D1A4EDDBF00D709AE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A35E1A4EDDFA00D709AE /* DeadlockObject.h */,
-				FA27A35F1A4EDDFA00D709AE /* DeadlockObject.m */,
-				FA27A3601A4EDDFA00D709AE /* MagicObject.h */,
-				FA27A3611A4EDDFA00D709AE /* MagicObject.m */,
-				FA27A3621A4EDDFA00D709AE /* SharedObject.h */,
-				FA27A3631A4EDDFA00D709AE /* SharedObject.m */,
-				FA27A3641A4EDDFA00D709AE /* SimpleObject.h */,
-				FA27A3651A4EDDFA00D709AE /* SimpleObject.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		FA27A36B1A4EE08C00D709AE /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A36C1A4EE08C00D709AE /* Private */,
-				FA27A3711A4EE08C00D709AE /* Public */,
-				FA27A3751A4EE08C00D709AE /* Subspecs */,
-			);
-			name = Pod;
-			path = ../ABMultiton;
-			sourceTree = "<group>";
-		};
-		FA27A36C1A4EE08C00D709AE /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A36D1A4EE08C00D709AE /* ABMultitonInjector.h */,
-				FA27A36E1A4EE08C00D709AE /* ABMultitonInjector.m */,
-				FA27A36F1A4EE08C00D709AE /* dispatch_safe.h */,
-				FA27A3701A4EE08C00D709AE /* dispatch_safe.m */,
-			);
-			path = Private;
-			sourceTree = "<group>";
-		};
-		FA27A3711A4EE08C00D709AE /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A3721A4EE08C00D709AE /* ABMultiton.h */,
-				FA27A3731A4EE08C00D709AE /* ABMultiton.m */,
-				FA27A3741A4EE08C00D709AE /* ABMultitonProtocol.h */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		FA27A3751A4EE08C00D709AE /* Subspecs */ = {
-			isa = PBXGroup;
-			children = (
-				FA27A3761A4EE08C00D709AE /* ABMultiton+SetInstance.h */,
-				FA27A3771A4EE08C00D709AE /* ABMultiton+SetInstance.m */,
-			);
-			path = Subspecs;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		FA27A3041A4EDAED00D709AE /* ABMultiton */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA27A3281A4EDAED00D709AE /* Build configuration list for PBXNativeTarget "ABMultiton" */;
-			buildPhases = (
-				FA27A3011A4EDAED00D709AE /* Sources */,
-				FA27A3021A4EDAED00D709AE /* Frameworks */,
-				FA27A3031A4EDAED00D709AE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ABMultiton;
-			productName = ABMultiton;
-			productReference = FA27A3051A4EDAED00D709AE /* ABMultiton.app */;
-			productType = "com.apple.product-type.application";
-		};
-		FA27A3451A4EDC2200D709AE /* ABMultitonSpec */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA27A34E1A4EDC2200D709AE /* Build configuration list for PBXNativeTarget "ABMultitonSpec" */;
-			buildPhases = (
-				4F105059B314C4B38E0563A7 /* Check Pods Manifest.lock */,
-				FA27A3421A4EDC2200D709AE /* Sources */,
-				FA27A3431A4EDC2200D709AE /* Frameworks */,
-				FA27A3441A4EDC2200D709AE /* Resources */,
-				84D2076EEFA63BA4F6526ADE /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA27A34D1A4EDC2200D709AE /* PBXTargetDependency */,
-			);
-			name = ABMultitonSpec;
-			productName = ABMultitonSpec;
-			productReference = FA27A3461A4EDC2200D709AE /* ABMultitonSpec.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		FA27A2FD1A4EDAED00D709AE /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = Okolodev;
-				TargetAttributes = {
-					FA27A3041A4EDAED00D709AE = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					FA27A3451A4EDC2200D709AE = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = FA27A3041A4EDAED00D709AE;
-					};
-				};
-			};
-			buildConfigurationList = FA27A3001A4EDAED00D709AE /* Build configuration list for PBXProject "ABMultiton" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = FA27A2FC1A4EDAED00D709AE;
-			productRefGroup = FA27A3061A4EDAED00D709AE /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				FA27A3041A4EDAED00D709AE /* ABMultiton */,
-				FA27A3451A4EDC2200D709AE /* ABMultitonSpec */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		FA27A3031A4EDAED00D709AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA27A3141A4EDAED00D709AE /* Main.storyboard in Resources */,
-				FA27A3191A4EDAED00D709AE /* LaunchScreen.xib in Resources */,
-				FA27A3161A4EDAED00D709AE /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA27A3441A4EDC2200D709AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4F105059B314C4B38E0563A7 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		84D2076EEFA63BA4F6526ADE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		FA27A3011A4EDAED00D709AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA27A3671A4EDDFA00D709AE /* MagicObject.m in Sources */,
-				FA27A3661A4EDDFA00D709AE /* DeadlockObject.m in Sources */,
-				FA27A3111A4EDAED00D709AE /* ViewController.m in Sources */,
-				FA27A37B1A4EE08C00D709AE /* ABMultiton+SetInstance.m in Sources */,
-				FA27A3691A4EDDFA00D709AE /* SimpleObject.m in Sources */,
-				FA27A37A1A4EE08C00D709AE /* ABMultiton.m in Sources */,
-				FA27A3781A4EE08C00D709AE /* ABMultitonInjector.m in Sources */,
-				FA27A30E1A4EDAED00D709AE /* AppDelegate.m in Sources */,
-				FA27A30B1A4EDAED00D709AE /* main.m in Sources */,
-				FA27A3791A4EE08C00D709AE /* dispatch_safe.m in Sources */,
-				FA27A3681A4EDDFA00D709AE /* SharedObject.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA27A3421A4EDC2200D709AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA27A35A1A4EDD5A00D709AE /* ABMultitonSpec.mm in Sources */,
-				9AFC969D1A6BDEA4008A295D /* ABMultitonSwiftSpec.mm in Sources */,
-				FA27A3521A4EDD1A00D709AE /* ABMultitonTestMock.m in Sources */,
-				FA27A3581A4EDD5A00D709AE /* ABMultitonDeadlockSpec.mm in Sources */,
-				FA27A3571A4EDD5A00D709AE /* ABMultitonConcurrencySpec.mm in Sources */,
-				FA27A3591A4EDD5A00D709AE /* ABMultitonSetInstanceSpec.mm in Sources */,
-				9AFC96A11A6BDF28008A295D /* SwiftSingleton.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FA27A34D1A4EDC2200D709AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA27A3041A4EDAED00D709AE /* ABMultiton */;
-			targetProxy = FA27A34C1A4EDC2200D709AE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FA27A3121A4EDAED00D709AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA27A3131A4EDAED00D709AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FA27A3171A4EDAED00D709AE /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA27A3181A4EDAED00D709AE /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		FA27A3261A4EDAED00D709AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		FA27A3271A4EDAED00D709AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		FA27A3291A4EDAED00D709AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				GCC_PREFIX_HEADER = "ABMultiton/ABMultiton-Prefix.pch";
-				INFOPLIST_FILE = ABMultiton/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		FA27A32A1A4EDAED00D709AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				GCC_PREFIX_HEADER = "ABMultiton/ABMultiton-Prefix.pch";
-				INFOPLIST_FILE = ABMultiton/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		FA27A34F1A4EDC2200D709AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDC305836E1D60DDF755D3A5 /* Pods-ABMultitonSpec.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "ABMultitonSpec/ABMultitonSpec-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ABMultitonSpec/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ABMultitonSpec/ABMultitonSpec-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ABMultiton.app/ABMultiton";
-			};
-			name = Debug;
-		};
-		FA27A3501A4EDC2200D709AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 707D9FDD0D559D72765F7A87 /* Pods-ABMultitonSpec.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREFIX_HEADER = "ABMultitonSpec/ABMultitonSpec-Prefix.pch";
-				INFOPLIST_FILE = ABMultitonSpec/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ABMultitonSpec/ABMultitonSpec-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ABMultiton.app/ABMultiton";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		FA27A3001A4EDAED00D709AE /* Build configuration list for PBXProject "ABMultiton" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA27A3261A4EDAED00D709AE /* Debug */,
-				FA27A3271A4EDAED00D709AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA27A3281A4EDAED00D709AE /* Build configuration list for PBXNativeTarget "ABMultiton" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA27A3291A4EDAED00D709AE /* Debug */,
-				FA27A32A1A4EDAED00D709AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA27A34E1A4EDC2200D709AE /* Build configuration list for PBXNativeTarget "ABMultitonSpec" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA27A34F1A4EDC2200D709AE /* Debug */,
-				FA27A3501A4EDC2200D709AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = FA27A2FD1A4EDAED00D709AE /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>298D1D4CA69333DC56B348DA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>61CD4674A2E16AA88EC6B912</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4F105059B314C4B38E0563A7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>61CD4674A2E16AA88EC6B912</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-ABMultitonSpec.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>707D9FDD0D559D72765F7A87</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-ABMultitonSpec.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7F7D754ADCA1895744117379</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>84D2076EEFA63BA4F6526ADE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>9AFC969C1A6BDEA4008A295D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.cpp.objcpp</string>
+			<key>path</key>
+			<string>ABMultitonSwiftSpec.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9AFC969D1A6BDEA4008A295D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9AFC969C1A6BDEA4008A295D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9AFC969E1A6BDF03008A295D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9AFC96A01A6BDF28008A295D</string>
+				<string>9AFC969F1A6BDF27008A295D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Mocks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9AFC969F1A6BDF27008A295D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ABMultitonSpec-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9AFC96A01A6BDF28008A295D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>SwiftSingleton.swift</string>
+			<key>path</key>
+			<string>Mocks/SwiftSingleton.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9AFC96A11A6BDF28008A295D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9AFC96A01A6BDF28008A295D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BE6F47C5A712BEB0F4CE2223</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>61CD4674A2E16AA88EC6B912</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E6956353F156B2A45967399E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FDC305836E1D60DDF755D3A5</string>
+				<string>707D9FDD0D559D72765F7A87</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A2FC1A4EDAED00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A36B1A4EE08C00D709AE</string>
+				<string>FA27A3071A4EDAED00D709AE</string>
+				<string>FA27A3471A4EDC2200D709AE</string>
+				<string>FA27A3061A4EDAED00D709AE</string>
+				<string>E6956353F156B2A45967399E</string>
+				<string>BE6F47C5A712BEB0F4CE2223</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A2FD1A4EDAED00D709AE</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0730</string>
+				<key>LastUpgradeCheck</key>
+				<string>0610</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Okolodev</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>FA27A3041A4EDAED00D709AE</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1.1</string>
+					</dict>
+					<key>FA27A3451A4EDC2200D709AE</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1.1</string>
+						<key>TestTargetID</key>
+						<string>FA27A3041A4EDAED00D709AE</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>FA27A3001A4EDAED00D709AE</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>FA27A2FC1A4EDAED00D709AE</string>
+			<key>productRefGroup</key>
+			<string>FA27A3061A4EDAED00D709AE</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>FA27A3041A4EDAED00D709AE</string>
+				<string>FA27A3451A4EDC2200D709AE</string>
+			</array>
+		</dict>
+		<key>FA27A3001A4EDAED00D709AE</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FA27A3261A4EDAED00D709AE</string>
+				<string>FA27A3271A4EDAED00D709AE</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FA27A3011A4EDAED00D709AE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FA27A3671A4EDDFA00D709AE</string>
+				<string>FA27A3661A4EDDFA00D709AE</string>
+				<string>FA27A3111A4EDAED00D709AE</string>
+				<string>FA27A37B1A4EE08C00D709AE</string>
+				<string>FA27A3691A4EDDFA00D709AE</string>
+				<string>FA27A37A1A4EE08C00D709AE</string>
+				<string>FA27A3781A4EE08C00D709AE</string>
+				<string>FA27A30E1A4EDAED00D709AE</string>
+				<string>FA27A30B1A4EDAED00D709AE</string>
+				<string>FA27A3791A4EE08C00D709AE</string>
+				<string>FA27A3681A4EDDFA00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FA27A3021A4EDAED00D709AE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FA27A3031A4EDAED00D709AE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FA27A3141A4EDAED00D709AE</string>
+				<string>FA27A3191A4EDAED00D709AE</string>
+				<string>FA27A3161A4EDAED00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FA27A3041A4EDAED00D709AE</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>FA27A3281A4EDAED00D709AE</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FA27A3011A4EDAED00D709AE</string>
+				<string>FA27A3021A4EDAED00D709AE</string>
+				<string>FA27A3031A4EDAED00D709AE</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ABMultiton</string>
+			<key>productName</key>
+			<string>ABMultiton</string>
+			<key>productReference</key>
+			<string>FA27A3051A4EDAED00D709AE</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>FA27A3051A4EDAED00D709AE</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ABMultiton.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FA27A3061A4EDAED00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3051A4EDAED00D709AE</string>
+				<string>FA27A3461A4EDC2200D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3071A4EDAED00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A35D1A4EDDBF00D709AE</string>
+				<string>FA27A32F1A4EDB9000D709AE</string>
+				<string>FA27A32E1A4EDB8800D709AE</string>
+				<string>FA27A3301A4EDB9B00D709AE</string>
+				<string>FA27A3081A4EDAED00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ABMultiton</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3081A4EDAED00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3091A4EDAED00D709AE</string>
+				<string>FA27A30A1A4EDAED00D709AE</string>
+				<string>FA27A36A1A4EDF8E00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3091A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A30A1A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A30B1A4EDAED00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A30A1A4EDAED00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A30C1A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A30D1A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A30E1A4EDAED00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A30D1A4EDAED00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A30F1A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3101A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3111A4EDAED00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3101A4EDAED00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3121A4EDAED00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3131A4EDAED00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3131A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3141A4EDAED00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3121A4EDAED00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3151A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3161A4EDAED00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3151A4EDAED00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3171A4EDAED00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3181A4EDAED00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3181A4EDAED00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3191A4EDAED00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3171A4EDAED00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3261A4EDAED00D709AE</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FA27A3271A4EDAED00D709AE</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FA27A3281A4EDAED00D709AE</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FA27A3291A4EDAED00D709AE</string>
+				<string>FA27A32A1A4EDAED00D709AE</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FA27A3291A4EDAED00D709AE</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>c++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ABMultiton/ABMultiton-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>ABMultiton/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FA27A32A1A4EDAED00D709AE</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>c++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ABMultiton/ABMultiton-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>ABMultiton/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FA27A32E1A4EDB8800D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A30C1A4EDAED00D709AE</string>
+				<string>FA27A30D1A4EDAED00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>AppDelegate</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A32F1A4EDB9000D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A30F1A4EDAED00D709AE</string>
+				<string>FA27A3101A4EDAED00D709AE</string>
+				<string>FA27A3121A4EDAED00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Controllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3301A4EDB9B00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3151A4EDAED00D709AE</string>
+				<string>FA27A3171A4EDAED00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3421A4EDC2200D709AE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FA27A35A1A4EDD5A00D709AE</string>
+				<string>9AFC969D1A6BDEA4008A295D</string>
+				<string>FA27A3521A4EDD1A00D709AE</string>
+				<string>FA27A3581A4EDD5A00D709AE</string>
+				<string>FA27A3571A4EDD5A00D709AE</string>
+				<string>FA27A3591A4EDD5A00D709AE</string>
+				<string>9AFC96A11A6BDF28008A295D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FA27A3431A4EDC2200D709AE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>298D1D4CA69333DC56B348DA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FA27A3441A4EDC2200D709AE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FA27A3451A4EDC2200D709AE</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>FA27A34E1A4EDC2200D709AE</string>
+			<key>buildPhases</key>
+			<array>
+				<string>4F105059B314C4B38E0563A7</string>
+				<string>FA27A3421A4EDC2200D709AE</string>
+				<string>FA27A3431A4EDC2200D709AE</string>
+				<string>FA27A3441A4EDC2200D709AE</string>
+				<string>84D2076EEFA63BA4F6526ADE</string>
+				<string>7F7D754ADCA1895744117379</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>FA27A34D1A4EDC2200D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ABMultitonSpec</string>
+			<key>productName</key>
+			<string>ABMultitonSpec</string>
+			<key>productReference</key>
+			<string>FA27A3461A4EDC2200D709AE</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>FA27A3461A4EDC2200D709AE</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ABMultitonSpec.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FA27A3471A4EDC2200D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9AFC969E1A6BDF03008A295D</string>
+				<string>FA27A35B1A4EDD6200D709AE</string>
+				<string>FA27A3481A4EDC2200D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ABMultitonSpec</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3481A4EDC2200D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3491A4EDC2200D709AE</string>
+				<string>FA27A3511A4EDD1A00D709AE</string>
+				<string>FA27A35C1A4EDD7700D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3491A4EDC2200D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A34C1A4EDC2200D709AE</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>FA27A2FD1A4EDAED00D709AE</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>FA27A3041A4EDAED00D709AE</string>
+			<key>remoteInfo</key>
+			<string>ABMultiton</string>
+		</dict>
+		<key>FA27A34D1A4EDC2200D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>FA27A3041A4EDAED00D709AE</string>
+			<key>targetProxy</key>
+			<string>FA27A34C1A4EDC2200D709AE</string>
+		</dict>
+		<key>FA27A34E1A4EDC2200D709AE</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>FA27A34F1A4EDC2200D709AE</string>
+				<string>FA27A3501A4EDC2200D709AE</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>FA27A34F1A4EDC2200D709AE</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>FDC305836E1D60DDF755D3A5</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ABMultitonSpec/ABMultitonSpec-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>ABMultitonSpec/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>ABMultitonSpec/ABMultitonSpec-Bridging-Header.h</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/ABMultiton.app/ABMultiton</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FA27A3501A4EDC2200D709AE</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>707D9FDD0D559D72765F7A87</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>ABMultitonSpec/ABMultitonSpec-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>ABMultitonSpec/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>ABMultitonSpec/ABMultitonSpec-Bridging-Header.h</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/ABMultiton.app/ABMultiton</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FA27A3511A4EDD1A00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ABMultitonTestMock.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3521A4EDD1A00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3511A4EDD1A00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3531A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.cpp.objcpp</string>
+			<key>path</key>
+			<string>ABMultitonConcurrencySpec.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3541A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.cpp.objcpp</string>
+			<key>path</key>
+			<string>ABMultitonDeadlockSpec.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3551A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.cpp.objcpp</string>
+			<key>path</key>
+			<string>ABMultitonSetInstanceSpec.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3561A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.cpp.objcpp</string>
+			<key>path</key>
+			<string>ABMultitonSpec.mm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3571A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3531A4EDD5A00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3581A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3541A4EDD5A00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3591A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3551A4EDD5A00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A35A1A4EDD5A00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3561A4EDD5A00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A35B1A4EDD6200D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3531A4EDD5A00D709AE</string>
+				<string>FA27A3541A4EDD5A00D709AE</string>
+				<string>FA27A3551A4EDD5A00D709AE</string>
+				<string>FA27A3561A4EDD5A00D709AE</string>
+				<string>9AFC969C1A6BDEA4008A295D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Spec</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A35C1A4EDD7700D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ABMultitonSpec-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A35D1A4EDDBF00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A35E1A4EDDFA00D709AE</string>
+				<string>FA27A35F1A4EDDFA00D709AE</string>
+				<string>FA27A3601A4EDDFA00D709AE</string>
+				<string>FA27A3611A4EDDFA00D709AE</string>
+				<string>FA27A3621A4EDDFA00D709AE</string>
+				<string>FA27A3631A4EDDFA00D709AE</string>
+				<string>FA27A3641A4EDDFA00D709AE</string>
+				<string>FA27A3651A4EDDFA00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A35E1A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DeadlockObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A35F1A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DeadlockObject.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3601A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MagicObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3611A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MagicObject.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3621A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SharedObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3631A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SharedObject.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3641A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SimpleObject.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3651A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SimpleObject.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3661A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A35F1A4EDDFA00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3671A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3611A4EDDFA00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3681A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3631A4EDDFA00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3691A4EDDFA00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3651A4EDDFA00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A36A1A4EDF8E00D709AE</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ABMultiton-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A36B1A4EE08C00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A36C1A4EE08C00D709AE</string>
+				<string>FA27A3711A4EE08C00D709AE</string>
+				<string>FA27A3751A4EE08C00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pod</string>
+			<key>path</key>
+			<string>../ABMultiton</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A36C1A4EE08C00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A36D1A4EE08C00D709AE</string>
+				<string>FA27A36E1A4EE08C00D709AE</string>
+				<string>FA27A36F1A4EE08C00D709AE</string>
+				<string>FA27A3701A4EE08C00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Private</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A36D1A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ABMultitonInjector.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A36E1A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ABMultitonInjector.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A36F1A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>dispatch_safe.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3701A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>dispatch_safe.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3711A4EE08C00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3721A4EE08C00D709AE</string>
+				<string>FA27A3731A4EE08C00D709AE</string>
+				<string>FA27A3741A4EE08C00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Public</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3721A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ABMultiton.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3731A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ABMultiton.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3741A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ABMultitonProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3751A4EE08C00D709AE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FA27A3761A4EE08C00D709AE</string>
+				<string>FA27A3771A4EE08C00D709AE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Subspecs</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3761A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ABMultiton+SetInstance.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3771A4EE08C00D709AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ABMultiton+SetInstance.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FA27A3781A4EE08C00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A36E1A4EE08C00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A3791A4EE08C00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3701A4EE08C00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A37A1A4EE08C00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3731A4EE08C00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FA27A37B1A4EE08C00D709AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA27A3771A4EE08C00D709AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FDC305836E1D60DDF755D3A5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-ABMultitonSpec.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-ABMultitonSpec/Pods-ABMultitonSpec.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>FA27A2FD1A4EDAED00D709AE</string>
+</dict>
+</plist>
